@@ -4,6 +4,7 @@ services:
     container_name: minecraft-server
     ports:
       - 25565:25565
+      - 24454:24454/udp
     environment:
       EULA: "TRUE"
       TYPE: "PAPER"
@@ -15,4 +16,3 @@ services:
     volumes:
       - ./data:/data
     restart: unless-stopped
-

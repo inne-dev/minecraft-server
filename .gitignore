@@ -3,3 +3,6 @@ data/logs/
 data/cache/
 data/world_nether/
 data/world_the_end/
+data/.DS_Store
+data/.rcon-cli.env
+data/.rcon-cli.yaml
