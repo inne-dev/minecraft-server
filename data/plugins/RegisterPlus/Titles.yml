@@ -1,0 +1,18 @@
+titles:
+  join_msg:
+    register: '&e/register [password]'
+    login: '&e/login [password]'
+  login_msg:
+    AutoLogin: '&aAutoLogin logged you in'
+    login: '&aSuccesfully logged in'
+    register: '&aSuccesfully registered'
+    wrong_pass: '&cWrong password'
+  autologin:
+    enabled: '&a&lAutoLogin has been enabled'
+    disabled: '&c&lAutoLogin has been disabled'
+chat_msg:
+  join_leave:
+    join: '&a[+] %player%'
+    leave: '&c[-] %player%'
+    enabled: true
+  commands_login: '&c&lYou need to login to use commands!'
