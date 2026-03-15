@@ -1,0 +1,16 @@
+passwords:
+  sk2sk:
+    ip: 95.24.211.21
+    autologin: false
+    pass: sk2sk
+    logged in: false
+  inne:
+    ip: 31.134.165.85
+    autologin: false
+    pass: '0990'
+    logged in: false
+  dar6:
+    ip: 95.24.211.21
+    autologin: false
+    pass: dar6
+    logged in: false
