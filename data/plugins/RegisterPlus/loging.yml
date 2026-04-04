@@ -14,3 +14,13 @@ passwords:
     autologin: false
     pass: dar6
     logged in: false
+  irinella:
+    ip: 37.218.246.97
+    autologin: false
+    pass: '4141'
+    logged in: false
+  tovlen:
+    ip: 185.92.139.77
+    autologin: false
+    pass: tovlen
+    logged in: false
