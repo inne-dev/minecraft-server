@@ -1,0 +1,13 @@
+# TeleportPlus Configuration
+# Version 1.1.0
+
+warps: {}
+tp:
+  global-enabled: true
+warp:
+  global-enabled: true
+tpa:
+  cooldown: 0
+tpaccept:
+  delay: 3
+disabled-tpa-players: []

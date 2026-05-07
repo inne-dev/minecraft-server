@@ -1,24 +1,36 @@
+# Worlds
 data/world/
-data/logs/
-data/cache/
 data/world_nether/
 data/world_the_end/
+
+# Logs / cache
+data/logs/
+data/cache/
 data/.DS_Store
-data/.rcon-cli.env
-data/.rcon-cli.yaml
 
-data/.paper.env
-data/.papermc-manifest.json
-data/.rcon-cli.env
-data/.rcon-cli.yaml
-data/paper-1.21.11-127.jar
-data/plugins/FlectonePulse/flectonepulse.h2.mv.db
-data/plugins/RegisterPlus/loging.yml
-data/plugins/spark/tmp
-data/server.properties
-data/usercache.json
-data/version_history.json
-data/versions/1.21.11/paper-1.21.11.jar
-
+# Paper generated/cache files
+data/plugins/.paper-remapped/
 data/libraries/org/ow2/asm
 
+# Spark temporary profiling files
+data/plugins/spark/tmp/
+
+# Runtime user/server state
+data/usercache.json
+data/version_history.json
+
+# Runtime plugin databases
+data/plugins/**/*.db
+data/plugins/**/*.mv.db
+data/plugins/**/*.trace.db
+
+# Runtime plugin cache/log/temp folders
+data/plugins/*/cache/
+data/plugins/*/tmp/
+data/plugins/*/logs/
+
+# SkinsRestorer runtime/cache/player data
+data/plugins/SkinsRestorer/players/
+data/plugins/SkinsRestorer/skins/
+data/plugins/SkinsRestorer/recommendations.json
+data/plugins/SkinsRestorer/locales/repository/

@@ -24,3 +24,8 @@ passwords:
     autologin: false
     pass: tovlen
     logged in: false
+  SugarFree:
+    ip: 194.33.84.91
+    autologin: false
+    pass: SugarFree
+    logged in: false
