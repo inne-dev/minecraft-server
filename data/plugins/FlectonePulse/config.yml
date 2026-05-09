@@ -9,7 +9,7 @@
 #        \/           \/
 #
 # Don't change it if you don't know what it is
-version: "1.8.1"
+version: "1.9.3"
 # https://flectone.net/pulse/docs/config/language
 language:
   type: "en_us"
@@ -17,6 +17,7 @@ language:
 # https://flectone.net/pulse/docs/config/database
 database:
   ignore_existing_driver: false
+  use_playtime_tracking: true
   type: "H2"
   name: "flectonepulse"
   host: "127.0.0.1"
@@ -54,6 +55,7 @@ command:
 module:
   enable: true
   use_paper_message_sender: false
+  use_bukkit_pre_login_listener: false
 # https://flectone.net/pulse/docs/config/editor
 editor:
   host: ""
@@ -105,6 +107,11 @@ cache:
       duration: 1
       time_unit: "HOURS"
       size: 5000
+    ICU_MESSAGE:
+      invalidate_on_reload: false
+      duration: 10
+      time_unit: "MINUTES"
+      size: 100000
     LEGACY_COLOR_MESSAGE:
       invalidate_on_reload: false
       duration: 10

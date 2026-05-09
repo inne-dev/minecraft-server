@@ -19,6 +19,9 @@ advancedban:
   disable_flectonepulse_mute: true
   disable_flectonepulse_warn: true
   disable_flectonepulse_kick: true
+# https://flectone.net/pulse/docs/integration/blazeandcave
+blazeandcave:
+  enable: true
 # https://flectone.net/pulse/docs/integration/cmi
 cmi:
   enable: true
@@ -34,7 +37,14 @@ deepl:
 discord:
   enable: false
   ignore_all_bots: true
+  ignore_all_webhooks: true
   token: ""
+  proxy:
+    type: "DIRECT"
+    host: "127.0.0.1"
+    port: 1080
+    user: ""
+    password: ""
   custom_command:
     ping:
       need_player: true
@@ -54,9 +64,9 @@ discord:
       enable: true
       period: 1200
   message_channel:
-    FROM_DISCORD_TO_MINECRAFT:
+    MESSAGE_CHAT_GLOBAL:
     - "123456"
-    CHAT_GLOBAL:
+    INTEGRATION_DISCORD:
     - "123456"
   destination:
     type: "CHAT"
@@ -68,6 +78,24 @@ floodgate:
 # https://flectone.net/pulse/docs/integration/geyser
 geyser:
   enable: true
+# https://flectone.net/pulse/docs/integration/icu
+icu:
+  enable: false
+  bidi:
+    enable: true
+  arabic_shaping:
+    enable: true
+    numerals: false
+  word_breaking:
+    enable: false
+    thai: true
+    khmer: true
+    lao: true
+    tibetan: false
+    break_character: " "
+  normalization:
+    enable: false
+    form: "NFC"
 # https://flectone.net/pulse/docs/integration/interactivechat
 interactivechat:
   enable: true
@@ -91,6 +119,7 @@ litebans:
 # https://flectone.net/pulse/docs/integration/luckperms
 luckperms:
   enable: true
+  always_have_true: false
   tab_sort: true
 # https://flectone.net/pulse/docs/integration/maintenance
 maintenance:
@@ -132,8 +161,15 @@ tab:
 # https://flectone.net/pulse/docs/integration/telegram
 telegram:
   enable: false
+  ignore_all_bots: true
   parse_mode: "NONE"
   token: ""
+  proxy:
+    type: "DIRECT"
+    host: "127.0.0.1"
+    port: 1080
+    user: ""
+    password: ""
   custom_command:
     id:
       need_player: false
@@ -149,9 +185,9 @@ telegram:
       enable: true
       period: 1200
   message_channel:
-    FROM_TELEGRAM_TO_MINECRAFT:
+    MESSAGE_CHAT_GLOBAL:
     - "123456"
-    CHAT_GLOBAL:
+    INTEGRATION_TELEGRAM:
     - "123456"
   destination:
     type: "CHAT"
@@ -165,15 +201,21 @@ twitch:
   enable: false
   client_id: ""
   token: ""
+  proxy:
+    type: "DIRECT"
+    host: "127.0.0.1"
+    port: 1080
+    user: ""
+    password: ""
   custom_command:
     ping:
       need_player: true
       aliases:
       - "!ping"
   message_channel:
-    FROM_TWITCH_TO_MINECRAFT:
+    MESSAGE_CHAT_GLOBAL:
     - "faseri4ka"
-    CHAT_GLOBAL:
+    INTEGRATION_TWITCH:
     - "faseri4ka"
   follow_channel:
     faseri4ka:

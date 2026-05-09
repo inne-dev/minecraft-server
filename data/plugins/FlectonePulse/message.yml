@@ -13,8 +13,10 @@ enable: true
 # https://flectone.net/pulse/docs/message/afk
 afk:
   enable: true
+  track_playtime: true
   range: "SERVER"
   delay: 3000
+  radius: 1.0
   ignore:
   - "afk"
   destination:
@@ -70,12 +72,14 @@ brand:
 bubble:
   enable: true
   visible_to_self: true
+  disallowed_input: ""
   max_count: 3
   max_length: 30
   elevation: 0.4
   distance: 30.0
   read_speed: 90.0
   handicap_chars: 10.0
+  hint_buffer_length: 7
   word_break_hint: "‑"
   interaction:
     enable: true
@@ -157,6 +161,26 @@ format:
   - "NBT"
   - "PRIDE"
   - "SHADOW_COLOR"
+  # https://flectone.net/pulse/docs/message/format/animation
+  animation:
+    enable: true
+    values:
+      flectonepulse:
+        raw: false
+        interval: 5
+  # https://flectone.net/pulse/docs/message/format/condition
+  condition:
+    enable: true
+    values:
+      player_name:
+        value: "%player_name%"
+        type: "STRING"
+      player_ping:
+        value: "%player_ping%"
+        type: "NUMBER"
+      is_admin:
+        value: "minecraft.admin"
+        type: "PERMISSION"
   # https://flectone.net/pulse/docs/message/format/fcolor
   fcolor:
     enable: true
@@ -233,10 +257,19 @@ format:
   # https://flectone.net/pulse/docs/message/format/object
   object:
     enable: true
-    player_head: true
-    sprite: true
-    need_extra_space: true
-    hide_invisible_player_head: false
+    player_head_tag:
+      enable: true
+      need_extra_space: true
+      hide_invisible_player_head: false
+    sprite_tag:
+      enable: true
+      need_extra_space: true
+    texture_tag:
+      enable: true
+      need_extra_space: false
+      mineskin_api_key: ""
+      values:
+        example: ""
   # https://flectone.net/pulse/docs/message/format/questionanswer
   question_answer:
     enable: false
@@ -299,9 +332,10 @@ format:
   scoreboard:
     enable: true
     name_visible: false
+    hide_name_when_sneaking: false
     color: "<white>"
-    prefix: "<vault_prefix><stream_prefix>"
-    suffix: "<afk_suffix><vault_suffix>"
+    prefix: "<prefix><stream>"
+    suffix: "<afk><suffix>"
     ticker:
       enable: false
   # https://flectone.net/pulse/docs/message/format/translate
@@ -412,7 +446,7 @@ status:
     enable: false
     control: true
     max: 69
-    online: -69
+    online: ""
   # https://flectone.net/pulse/docs/message/status/version
   version:
     enable: false
@@ -441,6 +475,9 @@ tab:
   # https://flectone.net/pulse/docs/message/tab/playerlistname
   playerlistname:
     enable: true
+    hide_invisible: false
+    hide_spectator: false
+    spectator_list_order: false
     proxy_mode: true
     ticker:
       enable: true

@@ -19,9 +19,9 @@ use-player-locale: true
 max-uses-per-day: 50
 # Tree blocks that non-VIP players can chop down every day,
 # you can give everyone "autotreechop.vip" permission to disable it.
-max-blocks-per-day: 500
+max-blocks-per-day: 1000
 # Cooldown time (second), use 0 to disable
-cooldownTime: 5
+cooldownTime: 1
 
 # VIP setting
 # If disable, VIP have unlimited usage
@@ -51,7 +51,7 @@ toolDamageDecrease: 1
 # Seconds of tree-chop inactivity before the player must re-confirm their intent.
 idle-timeout: 300
 # Seconds the player has to chop any log (or run /atc confirm) after seeing the warning.
-confirmation-window: 10
+confirmation-window: 15
 # Require confirmation when the broken log has no leaf blocks nearby.
 # Helps prevent accidentally chopping placed or stripped logs.
 enable-no-leaves-confirmation: true

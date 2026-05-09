@@ -104,59 +104,14 @@ command:
     name: "flectonepulse.module.command.chatsetting"
     type: "TRUE"
     settings:
-      CHAT_NAME:
-        name: "flectonepulse.module.command.chatsetting.chat_name"
-        type: "TRUE"
-      FCOLOR_SEE:
-        name: "flectonepulse.module.command.chatsetting.fcolor_see"
-        type: "TRUE"
-      FCOLOR_OUT:
-        name: "flectonepulse.module.command.chatsetting.fcolor_out"
-        type: "OP"
-      AFK:
-        name: "flectonepulse.module.command.chatsetting.afk"
-        type: "TRUE"
-      ADVANCEMENT:
-        name: "flectonepulse.module.command.chatsetting.advancement"
-        type: "TRUE"
-      CHAT:
-        name: "flectonepulse.module.command.chatsetting.chat"
-        type: "TRUE"
-      COMMAND_ANON:
-        name: "flectonepulse.module.command.chatsetting.command_anon"
-        type: "TRUE"
-      COMMAND_BALL:
-        name: "flectonepulse.module.command.chatsetting.command_ball"
-        type: "TRUE"
-      COMMAND_BROADCAST:
-        name: "flectonepulse.module.command.chatsetting.command_broadcast"
-        type: "TRUE"
-      COMMAND_COIN:
-        name: "flectonepulse.module.command.chatsetting.command_coin"
-        type: "TRUE"
-      COMMAND_DICE:
-        name: "flectonepulse.module.command.chatsetting.command_dice"
-        type: "TRUE"
-      COMMAND_DO:
-        name: "flectonepulse.module.command.chatsetting.command_do"
-        type: "TRUE"
-      COMMAND_MAIL:
-        name: "flectonepulse.module.command.chatsetting.command_mail"
-        type: "TRUE"
-      COMMAND_ME:
-        name: "flectonepulse.module.command.chatsetting.command_me"
-        type: "TRUE"
-      COMMAND_POLL:
-        name: "flectonepulse.module.command.chatsetting.command_poll"
-        type: "TRUE"
       COMMAND_ROCKPAPERSCISSORS:
         name: "flectonepulse.module.command.chatsetting.command_rockpaperscissors"
         type: "TRUE"
-      COMMAND_STREAM:
-        name: "flectonepulse.module.command.chatsetting.command_stream"
+      SLEEP:
+        name: "flectonepulse.module.command.chatsetting.sleep"
         type: "TRUE"
-      COMMAND_TELL:
-        name: "flectonepulse.module.command.chatsetting.command_tell"
+      MESSAGE_CHAT:
+        name: "flectonepulse.module.command.chatsetting.chat"
         type: "TRUE"
       COMMAND_TICTACTOE:
         name: "flectonepulse.module.command.chatsetting.command_tictactoe"
@@ -167,24 +122,69 @@ command:
       DEATH:
         name: "flectonepulse.module.command.chatsetting.death"
         type: "TRUE"
-      FROM_DISCORD_TO_MINECRAFT:
-        name: "flectonepulse.module.command.chatsetting.from_discord_to_minecraft"
+      COMMAND_ME:
+        name: "flectonepulse.module.command.chatsetting.command_me"
         type: "TRUE"
-      FROM_TELEGRAM_TO_MINECRAFT:
-        name: "flectonepulse.module.command.chatsetting.from_telegram_to_minecraft"
+      COMMAND_STREAM:
+        name: "flectonepulse.module.command.chatsetting.command_stream"
         type: "TRUE"
-      FROM_TWITCH_TO_MINECRAFT:
-        name: "flectonepulse.module.command.chatsetting.from_twitch_to_minecraft"
+      COMMAND_DICE:
+        name: "flectonepulse.module.command.chatsetting.command_dice"
         type: "TRUE"
-      JOIN:
-        name: "flectonepulse.module.command.chatsetting.join"
+      COMMAND_COIN:
+        name: "flectonepulse.module.command.chatsetting.command_coin"
         type: "TRUE"
-      QUIT:
+      COMMAND_ANON:
+        name: "flectonepulse.module.command.chatsetting.command_anon"
+        type: "TRUE"
+      MESSAGE_QUIT:
         name: "flectonepulse.module.command.chatsetting.quit"
         type: "TRUE"
-      SLEEP:
-        name: "flectonepulse.module.command.chatsetting.sleep"
+      COMMAND_BALL:
+        name: "flectonepulse.module.command.chatsetting.command_ball"
         type: "TRUE"
+      COMMAND_BROADCAST:
+        name: "flectonepulse.module.command.chatsetting.command_broadcast"
+        type: "TRUE"
+      FCOLOR_SEE:
+        name: "flectonepulse.module.command.chatsetting.fcolor_see"
+        type: "TRUE"
+      INTEGRATION_TWITCH:
+        name: "flectonepulse.module.command.chatsetting.from_twitch_to_minecraft"
+        type: "TRUE"
+      ADVANCEMENT:
+        name: "flectonepulse.module.command.chatsetting.advancement"
+        type: "TRUE"
+      COMMAND_POLL:
+        name: "flectonepulse.module.command.chatsetting.command_poll"
+        type: "TRUE"
+      MESSAGE_AFK:
+        name: "flectonepulse.module.command.chatsetting.afk"
+        type: "TRUE"
+      COMMAND_MAIL:
+        name: "flectonepulse.module.command.chatsetting.command_mail"
+        type: "TRUE"
+      MESSAGE_CHAT_NAME:
+        name: "flectonepulse.module.command.chatsetting.chat_name"
+        type: "TRUE"
+      MESSAGE_JOIN:
+        name: "flectonepulse.module.command.chatsetting.join"
+        type: "TRUE"
+      COMMAND_DO:
+        name: "flectonepulse.module.command.chatsetting.command_do"
+        type: "TRUE"
+      INTEGRATION_TELEGRAM:
+        name: "flectonepulse.module.command.chatsetting.from_telegram_to_minecraft"
+        type: "TRUE"
+      COMMAND_TELL:
+        name: "flectonepulse.module.command.chatsetting.command_tell"
+        type: "TRUE"
+      INTEGRATION_DISCORD:
+        name: "flectonepulse.module.command.chatsetting.from_discord_to_minecraft"
+        type: "TRUE"
+      FCOLOR_OUT:
+        name: "flectonepulse.module.command.chatsetting.fcolor_out"
+        type: "OP"
     other:
       name: "flectonepulse.module.command.chatsetting.other"
       type: "OP"
@@ -382,6 +382,22 @@ command:
       type: "OP"
     sound:
       name: "flectonepulse.module.command.mutelist.sound"
+      type: "TRUE"
+  # https://flectone.net/pulse/docs/command/nickname
+  nickname:
+    name: "flectonepulse.module.command.nickname"
+    type: "OP"
+    see:
+      name: "flectonepulse.module.command.nickname.see"
+      type: "FALSE"
+    other:
+      name: "flectonepulse.module.command.nickname.other"
+      type: "OP"
+    cooldown_bypass:
+      name: "flectonepulse.module.command.nickname.cooldown.bypass"
+      type: "OP"
+    sound:
+      name: "flectonepulse.module.command.nickname.sound"
       type: "TRUE"
   # https://flectone.net/pulse/docs/command/online
   online:
@@ -584,6 +600,10 @@ integration:
   advancedban:
     name: "flectonepulse.module.integration.advancedban"
     type: "TRUE"
+  # https://flectone.net/pulse/docs/integration/blazeandcave
+  blazeandcave:
+    name: "flectonepulse.module.integration.blazeandcave"
+    type: "TRUE"
   # https://flectone.net/pulse/docs/integration/cmi
   cmi:
     name: "flectonepulse.module.integration.cmi"
@@ -606,6 +626,10 @@ integration:
   # https://flectone.net/pulse/docs/integration/geyser
   geyser:
     name: "flectonepulse.module.integration.geyser"
+    type: "TRUE"
+  # https://flectone.net/pulse/docs/integration/icu
+  icu:
+    name: "flectonepulse.module.integration.icu"
     type: "TRUE"
   # https://flectone.net/pulse/docs/integration/interactivechat
   interactivechat:
@@ -827,6 +851,28 @@ message:
       SHADOW_COLOR:
         name: "flectonepulse.module.message.format.shadow_color"
         type: "OP"
+    # https://flectone.net/pulse/docs/message/format/animation
+    animation:
+      name: "flectonepulse.module.message.format.animation"
+      type: "TRUE"
+      values:
+        flectonepulse:
+          name: "flectonepulse.module.message.format.animation.flectonepulse"
+          type: "TRUE"
+    # https://flectone.net/pulse/docs/message/format/condition
+    condition:
+      name: "flectonepulse.module.message.format.condition"
+      type: "TRUE"
+      values:
+        player_name:
+          name: "flectonepulse.module.message.format.condition.player_name"
+          type: "TRUE"
+        player_ping:
+          name: "flectonepulse.module.message.format.condition.player_ping"
+          type: "TRUE"
+        is_admin:
+          name: "flectonepulse.module.message.format.condition.is_admin"
+          type: "TRUE"
     # https://flectone.net/pulse/docs/message/format/fcolor
     fcolor:
       name: "flectonepulse.module.message.format.fcolor"
@@ -841,10 +887,6 @@ message:
     # https://flectone.net/pulse/docs/message/format/fixation
     fixation:
       name: "flectonepulse.module.message.format.fixation"
-      type: "TRUE"
-    # https://flectone.net/pulse/docs/message/format/image
-    image:
-      name: "flectonepulse.module.message.format.image"
       type: "TRUE"
     # https://flectone.net/pulse/docs/message/format/mention
     mention:
@@ -906,12 +948,15 @@ message:
     object:
       name: "flectonepulse.module.message.format.object"
       type: "TRUE"
-      player_head:
+      player_head_tag:
         name: "flectonepulse.module.message.format.object.player_head"
         type: "TRUE"
-      sprite:
+      sprite_tag:
         name: "flectonepulse.module.message.format.object.sprite"
         type: "TRUE"
+      texture_tag:
+        name: "flectonepulse.module.message.format.object.texture"
+        type: "OP"
     # https://flectone.net/pulse/docs/message/format/questionanswer
     question_answer:
       name: "flectonepulse.module.message.format.questionanswer"
@@ -1040,10 +1085,6 @@ message:
     scoreboard:
       name: "flectonepulse.module.message.format.scoreboard"
       type: "TRUE"
-    # https://flectone.net/pulse/docs/message/format/spoiler
-    spoiler:
-      name: "flectonepulse.module.message.format.spoiler"
-      type: "TRUE"
     # https://flectone.net/pulse/docs/message/format/translate
     translate:
       name: "flectonepulse.module.message.format.translate"
@@ -1142,6 +1183,12 @@ message:
     playerlistname:
       name: "flectonepulse.module.message.tab.footer"
       type: "TRUE"
+      hide_invisible:
+        name: "flectonepulse.module.message.tab.playerlistname.hide_invisible"
+        type: "TRUE"
+      hide_spectator:
+        name: "flectonepulse.module.message.tab.playerlistname.hide_spectator"
+        type: "TRUE"
   # https://flectone.net/pulse/docs/message/update
   update:
     name: "flectonepulse.module.message.update"

@@ -112,30 +112,30 @@ chatsetting:
     disabled_material: "RED_DYE"
     enabled_material: "LIME_DYE"
     types:
-      AFK: 9
-      ADVANCEMENT: 10
-      CHAT: 11
-      COMMAND_ANON: 12
       COMMAND_BALL: 13
-      COMMAND_BROADCAST: 14
-      COMMAND_COIN: 15
-      COMMAND_DICE: 16
-      COMMAND_DO: 17
-      COMMAND_MAIL: 18
-      COMMAND_ME: 19
-      COMMAND_POLL: 20
       COMMAND_ROCKPAPERSCISSORS: 21
-      COMMAND_STREAM: 22
-      COMMAND_TELL: 23
+      COMMAND_BROADCAST: 14
+      SLEEP: 32
+      MESSAGE_CHAT: 11
+      INTEGRATION_TWITCH: 29
       COMMAND_TICTACTOE: 24
+      ADVANCEMENT: 10
+      COMMAND_POLL: 20
       COMMAND_TRY: 25
       DEATH: 26
-      FROM_DISCORD_TO_MINECRAFT: 27
-      FROM_TELEGRAM_TO_MINECRAFT: 28
-      FROM_TWITCH_TO_MINECRAFT: 29
-      JOIN: 30
-      QUIT: 31
-      SLEEP: 32
+      COMMAND_ME: 19
+      COMMAND_STREAM: 22
+      COMMAND_DICE: 16
+      COMMAND_COIN: 15
+      MESSAGE_AFK: 9
+      COMMAND_ANON: 12
+      COMMAND_MAIL: 18
+      MESSAGE_JOIN: 30
+      COMMAND_DO: 17
+      INTEGRATION_TELEGRAM: 28
+      COMMAND_TELL: 23
+      INTEGRATION_DISCORD: 27
+      MESSAGE_QUIT: 31
   menu:
     material: "LIGHT_BLUE_DYE"
     chat:
@@ -398,6 +398,7 @@ chatsetting:
 # https://flectone.net/pulse/docs/command/clearchat
 clearchat:
   enable: true
+  length: 100
   aliases:
   - "clearchat"
   destination:
@@ -608,6 +609,18 @@ mutelist:
   per_page: 4
   aliases:
   - "mutelist"
+  cooldown:
+    enable: false
+  sound:
+    enable: false
+# https://flectone.net/pulse/docs/command/nickname
+nickname:
+  enable: true
+  allowed_input: ""
+  aliases:
+  - "nickname"
+  destination:
+    type: "CHAT"
   cooldown:
     enable: false
   sound:

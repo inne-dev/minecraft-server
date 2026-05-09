@@ -111,30 +111,30 @@ command:
       disabled_color: "<color:#ff7171>"
       disabled_hover: "<color:#ff7171>Display disabled"
       types:
-        AFK: "<status_color>Afk"
-        ADVANCEMENT: "<status_color>Advancement"
-        CHAT: "<status_color>Chat messages"
-        COMMAND_ANON: "<status_color>Command /anon"
         COMMAND_BALL: "<status_color>Command /ball"
-        COMMAND_BROADCAST: "<status_color>Command /broadcast"
-        COMMAND_COIN: "<status_color>Command /coin"
-        COMMAND_DICE: "<status_color>Command /dice"
-        COMMAND_DO: "<status_color>Command /do"
-        COMMAND_MAIL: "<status_color>Command /mail"
-        COMMAND_ME: "<status_color>Command /me"
-        COMMAND_POLL: "<status_color>Command /poll"
         COMMAND_ROCKPAPERSCISSORS: "<status_color>Command /rockpaperscissors"
-        COMMAND_STREAM: "<status_color>Command /stream"
-        COMMAND_TELL: "<status_color>Command /tell"
+        COMMAND_BROADCAST: "<status_color>Command /broadcast"
+        SLEEP: "<status_color>Sleep"
+        MESSAGE_CHAT: "<status_color>Chat messages"
+        INTEGRATION_TWITCH: "<status_color>Messages from Twitch"
         COMMAND_TICTACTOE: "<status_color>Command /tictactoe"
+        ADVANCEMENT: "<status_color>Advancement"
+        COMMAND_POLL: "<status_color>Command /poll"
         COMMAND_TRY: "<status_color>Command /try"
         DEATH: "<status_color>Death"
-        FROM_DISCORD_TO_MINECRAFT: "<status_color>Messages from Discord"
-        FROM_TELEGRAM_TO_MINECRAFT: "<status_color>Messages from Telegram"
-        FROM_TWITCH_TO_MINECRAFT: "<status_color>Messages from Twitch"
-        JOIN: "<status_color>Join"
-        QUIT: "<status_color>Quit"
-        SLEEP: "<status_color>Sleep"
+        COMMAND_ME: "<status_color>Command /me"
+        COMMAND_STREAM: "<status_color>Command /stream"
+        COMMAND_DICE: "<status_color>Command /dice"
+        COMMAND_COIN: "<status_color>Command /coin"
+        MESSAGE_AFK: "<status_color>Afk"
+        COMMAND_ANON: "<status_color>Command /anon"
+        COMMAND_MAIL: "<status_color>Command /mail"
+        MESSAGE_JOIN: "<status_color>Join"
+        COMMAND_DO: "<status_color>Command /do"
+        INTEGRATION_TELEGRAM: "<status_color>Messages from Telegram"
+        COMMAND_TELL: "<status_color>Command /tell"
+        INTEGRATION_DISCORD: "<status_color>Messages from Discord"
+        MESSAGE_QUIT: "<status_color>Quit"
     menu:
       chat:
         item: "<fcolor:2>Chat type <br><fcolor:1>Chat for viewing and sending messages <br><br><fcolor:1>Your chat is <fcolor:2><chat>"
@@ -222,13 +222,15 @@ command:
     format: "<fcolor:4><message>"
   # https://flectone.net/pulse/docs/command/flectonepulse
   flectonepulse:
+    dump_error: "<color:#ff7171><sprite_or:⁉:gui:icon/chat_modified>An error occurred while uploading the dump: <error>"
     null_host_editor: "<color:#ff7171><sprite_or:⁉:gui:icon/chat_modified>Host parameter must be configured in config.yml"
     null_port_editor: "<color:#ff7171><sprite_or:⁉:gui:icon/chat_modified>Port <port> is unavailable, choose another one in config.yml"
     null_file: "<color:#ff7171><sprite_or:⁉:gui:icon/chat_modified>File <file> does not exist"
     file_exist: "<color:#ff7171><sprite_or:⁉:gui:icon/chat_modified>File <file> already exists"
     format_starting: "<fcolor:1>★ Starting <fcolor:2><type><fcolor:1>, please wait..."
-    format_false: "<color:#ff7171>★ Problem occurred during reload <br>Error: <message>"
+    format_false: "<color:#ff7171>★ Problem occurred during reload <br>Error: <error>"
     format_true: "<fcolor:1>★ <fcolor:2>FlectonePulse <fcolor:1>successfully reloaded! (<fcolor:2><i><time></i><fcolor:1>)"
+    format_dump: "<fcolor:1>★ Dump link <fcolor:2><click:open_url:\"<url>\"><hover:show_text:\"<fcolor:2><url>\"><url>"
     format_editor: "<fcolor:1>★ Web editing link <fcolor:2><click:open_url:\"<url>\"><hover:show_text:\"<fcolor:2><url>\"><url>"
     format_export: "<fcolor:1>★ Files exported to <fcolor:2><file>"
     format_import: "<fcolor:1>★ Files imported from <fcolor:2><file>"
@@ -304,6 +306,14 @@ command:
       header: "<fcolor:2>▋ All mutes: <count> <br>"
       line: "<hover:show_text:\"<fcolor:1>Click to unmute <target>\"><click:run_command:\"<command>\"><color:#ff7171>☒ <target></click></hover> <fcolor:1><hover:show_text:\"<fcolor:1>ID: <id><br>Date: <date><br>Time: <time><br>Moderator: <moderator><br>Reason: <reason>\">[MORE]</hover>"
       footer: "<br><fcolor:2>▋ <click:run_command:\"<command> <prev_page>\">←</click> <fcolor:1>Page: <current_page>/<last_page> <fcolor:2><click:run_command:\"<command> <next_page>\">→"
+  # https://flectone.net/pulse/docs/command/nickname
+  nickname:
+    null_player: "<color:#ff7171><sprite_or:⁉:gui:icon/chat_modified>This player does not exist"
+    null_nickname: "<color:#ff7171><sprite_or:⁉:gui:icon/chat_modified>This nickname cannot be used"
+    default_nickname: "<player>"
+    display: "<value><gray>~</gray>"
+    display_see: "(<player>) <value><gray>~</gray>"
+    format: "<fcolor:1>✎ Nickname was changed to <fcolor:2><nickname>"
   # https://flectone.net/pulse/docs/command/online
   online:
     null_player: "<color:#ff7171><sprite_or:⁉:gui:icon/chat_modified>This player does not exist"
@@ -373,6 +383,18 @@ command:
     format_true: "<fcolor:1>[👁] You <color:#98FB98>turned on <fcolor:1>spy mode"
     format_false: "<fcolor:1>[👁] You <color:#F08080>turned off <fcolor:1>spy mode"
     format_log: "<fcolor:1>[👁] <display_name> <color:#98FB98><action> <fcolor:1>→ <fcolor:2><message>"
+    actions:
+      tell: "private message"
+      msg: "private message"
+      w: "private message"
+      message: "private message"
+      send: "private message"
+      m: "private message"
+      anon: "anonymous message"
+      anvil: "item name"
+      book: "book text"
+      sign: "sign text"
+      local: "local chat"
   # https://flectone.net/pulse/docs/command/stream
   stream:
     already: "<color:#ff7171><sprite_or:⁉:gui:icon/chat_modified>You are already streaming"
@@ -485,10 +507,10 @@ integration:
     info_channel:
       id: "TPS <replacement:tps>"
     message_channel:
-      FROM_DISCORD_TO_MINECRAFT:
-        content: "<fcolor:2><global_name> <fcolor:1>» <fcolor:4><reply><message>"
-      CHAT_GLOBAL:
+      MESSAGE_CHAT_GLOBAL:
         content: "<final_message>"
+      INTEGRATION_DISCORD:
+        content: "<fcolor:2><global_name> <fcolor:1>» <fcolor:4><reply><message>"
   # https://flectone.net/pulse/docs/integration/telegram
   telegram:
     null_player: "This player does not exist"
@@ -500,8 +522,8 @@ integration:
     info_channel:
       id: "TPS <replacement:tps>"
     message_channel:
-      FROM_TELEGRAM_TO_MINECRAFT: "<fcolor:2><user_name> <fcolor:1>» <fcolor:4><reply><message>"
-      CHAT_GLOBAL: "<final_message>"
+      MESSAGE_CHAT_GLOBAL: "<final_message>"
+      INTEGRATION_TELEGRAM: "<fcolor:2><user_name> <fcolor:1>» <fcolor:4><reply><message>"
   # https://flectone.net/pulse/docs/integration/twitch
   twitch:
     null_player: "This player does not exist"
@@ -510,8 +532,8 @@ integration:
     custom_command:
       ping: "<player>'s ping is <replacement:ping>"
     message_channel:
-      FROM_TWITCH_TO_MINECRAFT: "<fcolor:2><name> <fcolor:1>» <fcolor:4><reply><message>"
-      CHAT_GLOBAL: "<final_message>"
+      MESSAGE_CHAT_GLOBAL: "<final_message>"
+      INTEGRATION_TWITCH: "<fcolor:2><name> <fcolor:1>» <fcolor:4><reply><message>"
 # https://flectone.net/pulse/docs/message
 message:
   # https://flectone.net/pulse/docs/message/afk
@@ -557,10 +579,43 @@ message:
     null_chat: "<color:#ff7171><sprite_or:⁉:gui:icon/chat_modified>Chat is disabled on this server"
     null_receiver: "<color:#ff7171><sprite_or:⁉:gui:icon/chat_modified>Nobody heard you"
     types:
-      global: "<delete><display_name> <world_prefix>»<fcolor:4> <message><reset><translate>"
-      local: "<delete><display_name><fcolor:3>: <message><reset><translate>"
+      global: "<delete><display_name> <world>»<fcolor:4> <message><reset><translation>"
+      local: "<delete><display_name><fcolor:3>: <message><reset><translation>"
   # https://flectone.net/pulse/docs/message/format
   format:
+    # https://flectone.net/pulse/docs/message/format/animation
+    animation:
+      values:
+        flectonepulse:
+        - "<#a6dbff>F<#9ad3fe>l<#8eccfd>e<#82c4fc>c<#77bdfc>t<#6bb5fb>o<#5faefa>n<#6bb5fb>e<#77bdfc>P<#82c4fc>u<#8eccfd>l<#9ad3fe>s<#a6dbff>e"
+        - "<#a6dbff>F<#a6dbff>l<#9ad3fe>e<#8eccfd>c<#82c4fc>t<#77bdfc>o<#6bb5fb>n<#5faefa>e<#6bb5fb>P<#77bdfc>u<#82c4fc>l<#8eccfd>s<#9ad3fe>e"
+        - "<#9ad3fe>F<#a6dbff>l<#a6dbff>e<#9ad3fe>c<#8eccfd>t<#82c4fc>o<#77bdfc>n<#6bb5fb>e<#5faefa>P<#6bb5fb>u<#77bdfc>l<#82c4fc>s<#8eccfd>e"
+        - "<#8eccfd>F<#9ad3fe>l<#a6dbff>e<#a6dbff>c<#9ad3fe>t<#8eccfd>o<#82c4fc>n<#77bdfc>e<#6bb5fb>P<#5faefa>u<#6bb5fb>l<#77bdfc>s<#82c4fc>e"
+        - "<#82c4fc>F<#8eccfd>l<#9ad3fe>e<#a6dbff>c<#a6dbff>t<#9ad3fe>o<#8eccfd>n<#82c4fc>e<#77bdfc>P<#6bb5fb>u<#5faefa>l<#6bb5fb>s<#77bdfc>e"
+        - "<#77bdfc>F<#82c4fc>l<#8eccfd>e<#9ad3fe>c<#a6dbff>t<#a6dbff>o<#9ad3fe>n<#8eccfd>e<#82c4fc>P<#77bdfc>u<#6bb5fb>l<#5faefa>s<#6bb5fb>e"
+        - "<#6bb5fb>F<#77bdfc>l<#82c4fc>e<#8eccfd>c<#9ad3fe>t<#a6dbff>o<#a6dbff>n<#9ad3fe>e<#8eccfd>P<#82c4fc>u<#77bdfc>l<#6bb5fb>s<#5faefa>e"
+        - "<#5faefa>F<#6bb5fb>l<#77bdfc>e<#82c4fc>c<#8eccfd>t<#9ad3fe>o<#a6dbff>n<#a6dbff>e<#9ad3fe>P<#8eccfd>u<#82c4fc>l<#77bdfc>s<#6bb5fb>e"
+        - "<#6bb5fb>F<#5faefa>l<#6bb5fb>e<#77bdfc>c<#82c4fc>t<#8eccfd>o<#9ad3fe>n<#a6dbff>e<#a6dbff>P<#9ad3fe>u<#8eccfd>l<#82c4fc>s<#77bdfc>e"
+        - "<#77bdfc>F<#6bb5fb>l<#5faefa>e<#6bb5fb>c<#77bdfc>t<#82c4fc>o<#8eccfd>n<#9ad3fe>e<#a6dbff>P<#a6dbff>u<#9ad3fe>l<#8eccfd>s<#82c4fc>e"
+        - "<#82c4fc>F<#77bdfc>l<#6bb5fb>e<#5faefa>c<#6bb5fb>t<#77bdfc>o<#82c4fc>n<#8eccfd>e<#9ad3fe>P<#a6dbff>u<#a6dbff>l<#9ad3fe>s<#8eccfd>e"
+        - "<#8eccfd>F<#82c4fc>l<#77bdfc>e<#6bb5fb>c<#5faefa>t<#6bb5fb>o<#77bdfc>n<#82c4fc>e<#8eccfd>P<#9ad3fe>u<#a6dbff>l<#a6dbff>s<#9ad3fe>e"
+        - "<#9ad3fe>F<#8eccfd>l<#82c4fc>e<#77bdfc>c<#6bb5fb>t<#5faefa>o<#6bb5fb>n<#77bdfc>e<#82c4fc>P<#8eccfd>u<#9ad3fe>l<#a6dbff>s<#a6dbff>e"
+    # https://flectone.net/pulse/docs/message/format/condition
+    condition:
+      values:
+        player_name:
+          default: "Nameless"
+          notch: "Markus Persson"
+          thefaser: "Artyom Mochalin"
+        player_ping:
+          "0": "Excellent"
+          "50": "Good"
+          "100": "Decent"
+          "150": "Bad"
+          "300": "Terrible"
+        is_admin:
+          "true": "Admin"
+          "false": "Player"
     # https://flectone.net/pulse/docs/message/format/object
     object:
       default_symbol: "☐"
@@ -621,7 +676,7 @@ message:
     names:
       constant: []
       display:
-      - "<click:suggest_command:\"/msg <player> \"><hover:show_text:\"<fcolor:2>Write to <white><player_head></white><player>\"><white><player_head></white><vault_prefix><stream_prefix><fcolor:2><player><afk_suffix><vault_suffix></hover></click>"
+      - "<click:suggest_command:\"/msg <player> \"><hover:show_text:\"<fcolor:2>Write to <white><player_head></white><player>\"><white><player_head></white><prefix><stream><fcolor:2><player><afk><suffix></hover></click>"
       entity: "<fcolor:2><hover:show_text:\"<fcolor:2><name> <br><fcolor:1>Type <fcolor:2><lang:'<type>'> <br><fcolor:1>ID <fcolor:2><uuid>\"><sprite:gui:icon/accessibility><name></hover>"
       unknown: "<fcolor:2><name>"
       invisible: "<fcolor:2>👻 Invisible"
@@ -701,14 +756,11 @@ message:
     footer:
       lists:
       - - " "
-        - "<fcolor:1>Hello <fcolor:2><player><fcolor:1>!"
-        - " "
-      - - " "
         - "<fcolor:1>TPS <replacement:tps>, Online <replacement:online>"
         - " "
     # https://flectone.net/pulse/docs/message/tab/playerlistname
     playerlistname:
-      format: "<!shadow><white><player_head></white></!shadow><world_prefix>▋ <reset><vault_prefix><stream_prefix><fcolor:2><player><afk_suffix><mute_suffix><vault_suffix>"
+      format: "<!shadow><white><player_head></white></!shadow><world>▋ <reset><prefix><stream><fcolor:2><player><afk><mute><suffix>"
   # https://flectone.net/pulse/docs/message/update
   update:
     format_player: "<fcolor:1><fcolor:2>(FlectonePulse)<fcolor:1> Your version <fcolor:2><current_version><fcolor:1> is outdated! Update to <fcolor:2><latest_version><fcolor:1> at <replacement:url:https://modrinth.com/plugin/flectonepulse>, to get new opportunities!"

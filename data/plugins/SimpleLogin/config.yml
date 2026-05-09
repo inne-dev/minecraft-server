@@ -1,0 +1,76 @@
+repeat-message-seconds: 3 # Seconds between repeated login message when trying to log in
+enable-blindness-effect: true # Apply blindness effect to unregistered/unlogged players
+kick-timeout-seconds: 300 # Player kicked after X seconds (Default is 5 minutes) if not logged in/registered.
+
+session-length: 7 # Length of session in days. Players won't have to log in again until this time has passed.
+2fa-allowed: true
+2fa-confirm-timeout: 300 # Seconds player has to confirm 2FA setup before it expires.
+
+min-password-length: 8
+
+delacc-confirm-timeout: 30 # Seconds player has to confirm account deletion before it expires.
+
+message: # Configurable messages
+
+  # --- Registration ---
+  register: "§cUsage: /register <password> <password> (Passwords must match)"
+  register_mismatch: "§cPasswords do not match."
+  register_success: "§aSuccessfully registered and logged in."
+  already_registered: "§cYou are already registered."
+  not_registered: "§cYou are not registered."
+  too_short: "§cPassword must be at least 8 characters long."
+
+  # --- Login ---
+  login: "§ePlease log in to continue. Use /login <password>"
+  login_success: "§aLogin successful."
+  login_fail: "§cIncorrect password."
+  already_loggedin: "§eYou are already logged in."
+  too_many_attempts: "§cToo many incorrect attempts. Kicked."
+  timeout: "§cLogin timed out after %seconds% seconds."
+
+  # --- 2FA ---
+  2faprompt: "§eYou can enable 2FA by using /enable2fa"
+  2faenabled: "§c2FA is enabled. Usage: /login <password> <6-digit code>"
+  2falogin_success: "§aLogin successful. Your session is active, no 2FA needed on next login."
+  2fainvalid_format: "§cInvalid 2FA code format."
+  2fainvalid_code: "§cInvalid 2FA code."
+  2fa_already_enabled: "§c2FA is already enabled."
+  2fa_not_enabled: "§c2FA is not enabled for your account."
+  2fa_enabled: "§a2FA has been enabled! Add this secret to Google Authenticator:"
+  2fa_disabled: "§a2FA has been disabled. Next login will require only your password."
+  2fa_not_allowed: "§c2FA is not allowed on this server."
+
+  # --- 2FA Confirmation ---
+  2fa_confirm_prompt: "§aOpen your authenticator app and run /2faconfirm <code> within %seconds% seconds."
+  2fa_confirm_expired: "§c2FA confirmation timed out. Please run /enable2fa again."
+  2fa_confirm_success: "§a2FA has been successfully enabled on your account!"
+  2fa_confirm_usage: "§cUsage: /2faconfirm <6-digit code>"
+  2fa_no_pending: "§cYou have no pending 2FA setup. Run /enable2fa first."
+  2fa_already_pending: "§eYou already have a pending 2FA setup. Check your chat for the secret key."
+
+  # --- Account Management ---
+  account_deleted_success: "§aYour account has been deleted."
+  account_delete_cancelled: "§cAccount deletion cancelled."
+  account_delete_2fa_confirm_usage: "§cUsage: /delacc confirm <6-digit code>"
+  account_delete_no2fa_confirm_usage: "§cUsage: /delacc confirm <password>"
+  account_delete_2fa_confirm_prompt: "§aTo confirm account deletion, please run /delacc confirm <6-digit code> within %seconds% seconds."
+  account_delete_no2fa_confirm_prompt: "§aTo confirm account deletion, please run /delacc confirm <password> within %seconds% seconds."
+  account_delete_fail: "§cFailed to delete your account."
+  account_delete_expired: "§cAccount deletion timed out. Please run /delacc again."
+  account_delete_invalid_2fa: "§cInvalid 2FA code. Account deletion cancelled."
+  account_delete_no_pending: "§cYou have no pending deletion request. Use /delacc first."
+  account_delete_no_password: "§cNo password found for your account."
+  account_delete_wrong_password: "§cIncorrect password. Account deletion cancelled."
+  account_delete_usage: "§cUsage: /delacc confirm <code/password> OR /delacc cancel"
+  must_login_delete: "§cYou must be logged in to delete your account."
+  must_login: "§cYou must be logged in to use this command."
+  changepass_usage: "§cUsage: /changepass <player> <newpass>"
+  changepass_success: "§aPassword for %player% has been changed."
+  changepass_notify: "§eYour password has been changed by an admin. If you did not request this, please contact an administrator."
+
+  # --- General / Errors ---
+  only_players: "§cThis command can only be used by players."
+  player_not_online: "§cThat player is not online."
+  no_permission: "§cYou don't have permission."
+  reload_success: "§aConfig reloaded."
+  internal_error: "§cAn internal error occurred. Please contact an administrator."

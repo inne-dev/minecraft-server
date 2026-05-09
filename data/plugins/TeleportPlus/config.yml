@@ -9,5 +9,5 @@ warp:
 tpa:
   cooldown: 0
 tpaccept:
-  delay: 3
+  delay: 1
 disabled-tpa-players: []

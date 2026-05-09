@@ -34,3 +34,5 @@ data/plugins/SkinsRestorer/players/
 data/plugins/SkinsRestorer/skins/
 data/plugins/SkinsRestorer/recommendations.json
 data/plugins/SkinsRestorer/locales/repository/
+
+.DS_Store

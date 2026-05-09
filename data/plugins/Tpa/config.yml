@@ -1,0 +1,155 @@
+# ====================================
+# TPA Plugin - Configuration File
+# ====================================
+
+# Cooldowns (in seconds)
+cooldown:
+  # Cooldown between sending TPA requests (how long must pass before player can send another /tpa)
+  tpa-cooldown: 30
+
+  # Cooldown for teleportation (how long must pass since last teleportation)
+  teleport-cooldown: 60
+
+  # TPA request expiration time (how long player has to respond)
+  request-expire: 60
+
+# Teleportation delay
+teleport-delay:
+  # Delay in seconds before teleportation (0 = instant teleportation)
+  delay: 3
+
+  # Show countdown in chat
+  show-countdown: true
+
+  # Cancel teleportation when player moves
+  cancel-on-move: true
+
+# Messages (use & for colors)
+messages:
+  # Basic messages
+  only-players: "&cThis command is only available for players!"
+  no-permission: "&cYou don't have permission to use this command!"
+  usage: "&eUsage: &7/tpa <player>"
+
+  # Player messages
+  player-not-found: "&cPlayer is not online or doesn't exist!"
+  cannot-teleport-self: "&cYou cannot teleport to yourself!"
+
+  # TPA requests
+  request-sent: "&aTeleportation request has been sent to &e{player}&a!"
+  request-received: "&e{player} &7is requesting to teleport to you."
+  no-pending-requests: "&cYou have no pending requests!"
+  request-expired: "&cTeleportation request has expired!"
+
+  # Buttons (clickable)
+  accept-button: "&a&l[ACCEPT]"
+  accept-hover: "&aClick to accept teleportation"
+  deny-button: "&c&l[DENY]"
+  deny-hover: "&cClick to deny teleportation"
+
+  # Accept/Deny
+  request-accepted: "&aYour request has been accepted by &e{player}&a!"
+  accepted-by: "&aAccepted request from player &e{player}&a!"
+  request-denied: "&cYour request has been denied by &e{player}&c!"
+  denied-by: "&cDenied request from player &e{player}&c!"
+
+  # Cooldowns
+  tpa-cooldown: "&cYou must wait &e{time} seconds &cbefore sending another TPA request!"
+  teleport-cooldown: "&cYou must wait &e{time} seconds &cbefore teleporting again!"
+
+  # Teleportation
+  teleport-countdown: "&eTeleporting in &b{time} seconds&e... Don't move!"
+  teleport-success: "&aSuccessfully teleported to &e{player}&a!"
+  player-arrived: "&e{player} &ahas teleported to you!"
+  teleport-cancelled: "&cTeleportation cancelled! &7(You moved)"
+  already-teleporting: "&cYou already have a pending teleportation!"
+
+  # Reload
+  config-reloaded: "&aConfiguration has been reloaded!"
+
+# Sounds
+sounds:
+  # Sound when sending request
+  request-sent:
+    enabled: true
+    sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+    volume: 1.0
+    pitch: 1.0
+
+  # Sound when receiving request
+  request-received:
+    enabled: true
+    sound: "BLOCK_NOTE_BLOCK_PLING"
+    volume: 1.0
+    pitch: 1.5
+
+  # Sound on successful teleportation
+  teleport-success:
+    enabled: true
+    sound: "ENTITY_ENDERMAN_TELEPORT"
+    volume: 1.0
+    pitch: 1.0
+
+  # Sound when request is denied
+  request-denied:
+    enabled: true
+    sound: "ENTITY_VILLAGER_NO"
+    volume: 1.0
+    pitch: 1.0
+
+  # Sound during teleportation countdown
+  teleport-countdown:
+    enabled: true
+    sound: "BLOCK_NOTE_BLOCK_BELL"
+    volume: 0.5
+    pitch: 1.2
+
+  # Sound when teleportation is cancelled
+  teleport-cancelled:
+    enabled: true
+    sound: "BLOCK_GLASS_BREAK"
+    volume: 0.8
+    pitch: 0.8
+
+# ====================================
+# Available sounds (26.1+):
+# ====================================
+# ENTITY_EXPERIENCE_ORB_PICKUP - experience orb
+# BLOCK_NOTE_BLOCK_PLING - note block pling
+# BLOCK_NOTE_BLOCK_BELL - note block bell
+# ENTITY_ENDERMAN_TELEPORT - enderman teleport
+# ENTITY_VILLAGER_NO - villager no
+# ENTITY_PLAYER_LEVELUP - level up
+# UI_BUTTON_CLICK - button click
+# BLOCK_BELL_USE - bell
+# ENTITY_ARROW_HIT_PLAYER - arrow hit
+# ITEM_TOTEM_USE - totem of undying
+# BLOCK_AMETHYST_BLOCK_CHIME - amethyst chime
+# ENTITY_ALLAY_AMBIENT_WITH_ITEM - allay
+# BLOCK_SCULK_SHRIEKER_SHRIEK - sculk shrieker
+# BLOCK_GLASS_BREAK - glass break
+# ENTITY_ITEM_PICKUP - item pickup
+# ====================================
+
+# ====================================
+# EXAMPLE CONFIGURATIONS:
+# ====================================
+#
+# Fast teleportation (no delay):
+#   teleport-delay:
+#     delay: 0
+#     cancel-on-move: false
+#
+# Long cooldowns (survival):
+#   cooldown:
+#     tpa-cooldown: 120
+#     teleport-cooldown: 300
+#     request-expire: 30
+#
+# Short cooldowns (creative):
+#   cooldown:
+#     tpa-cooldown: 10
+#     teleport-cooldown: 15
+#     request-expire: 120
+#
+# ====================================
