@@ -8,9 +8,17 @@ data/logs/
 data/cache/
 data/.DS_Store
 
+# Server runtime (downloaded automatically)
+data/paper-*.jar
+data/libraries/
+data/versions/
+
 # Paper generated/cache files
 data/plugins/.paper-remapped/
-data/libraries/org/ow2/asm
+
+# Plugin runtime libraries/backups
+data/plugins/*/libraries/
+data/plugins/*/backups/
 
 # Spark temporary profiling files
 data/plugins/spark/tmp/
