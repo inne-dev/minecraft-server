@@ -18,6 +18,7 @@ data/plugins/.paper-remapped/
 
 # Plugin runtime libraries/backups
 data/plugins/*/libraries/
+!data/plugins/FlectonePulse/libraries/
 data/plugins/*/backups/
 
 # Spark temporary profiling files
