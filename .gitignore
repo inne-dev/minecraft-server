@@ -1,47 +1,66 @@
-# Worlds
-data/world/
-data/world_nether/
-data/world_the_end/
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+secrets/
+data/.rcon-cli.*
+data/.paper.env
+data/.papermc-manifest.json
 
-# Logs / cache
+# Persistent world and runtime state
+data/world*/
 data/logs/
 data/cache/
-data/.DS_Store
-
-# Server runtime (downloaded automatically)
-data/paper-*.jar
+data/bluemap/
+data/server-icon.png
+data/.paper/
 data/libraries/
 data/versions/
-
-# Paper generated/cache files
-data/plugins/.paper-remapped/
-
-# Plugin runtime libraries/backups
-data/plugins/*/libraries/
-!data/plugins/FlectonePulse/libraries/
-data/plugins/*/backups/
-
-# Spark temporary profiling files
-data/plugins/spark/tmp/
-
-# Runtime user/server state
+data/paper-*.jar
 data/usercache.json
 data/version_history.json
+backups/
 
-# Runtime plugin databases
-data/plugins/**/*.db
-data/plugins/**/*.mv.db
-data/plugins/**/*.trace.db
-
-# Runtime plugin cache/log/temp folders
+# Downloaded plugin artifacts are refreshed at container startup
+data/plugins/*.jar
+data/plugins/**/*.jar
+data/plugins/.paper-remapped/
+data/plugins/*/libraries/
+data/plugins/*/backups/
 data/plugins/*/cache/
 data/plugins/*/tmp/
 data/plugins/*/logs/
-
-# SkinsRestorer runtime/cache/player data
+data/plugins/**/*.db
+data/plugins/**/*.mv.db
+data/plugins/**/*.trace.db
+data/plugins/FlectonePulse/libraries/
+data/plugins/FlectonePulse/minecraft/
+data/plugins/HazelwoodAuth/
+data/plugins/CraftEngine/libs/
+data/plugins/CraftEngine/resources/
+data/plugins/CraftEngine/cache/
+data/plugins/CraftEngine/generated/
+data/plugins/CraftEngine/data.db*
 data/plugins/SkinsRestorer/players/
 data/plugins/SkinsRestorer/skins/
 data/plugins/SkinsRestorer/recommendations.json
 data/plugins/SkinsRestorer/locales/repository/
+data/plugins/spark/tmp/
+data/plugins-disabled/
+
+# Legacy local plugin staging folder; curated artifacts live in bootstrap-/plugins/
+/plugins/
 
 .DS_Store
+data/plugins/LightPlus/
+data/plugins/AutoTreeChop/
+data/plugins/SimpleLogin/
+data/plugins/TeleportPlus/
+data/plugins/faststats/
+data/plugins/*.jar.before-*
+data/plugins/*.jar.*.bak
+data/plugins/CraftEngine/config.yml.before-*
+data/plugins/CraftEngine/commands.yml
+data/plugins/CraftEngine/translations/
+data/plugins/BlueMap/maps/
+data/plugins/BlueMap/storages/

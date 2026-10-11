@@ -8,11 +8,50 @@ services:
     environment:
       EULA: "TRUE"
       TYPE: "PAPER"
-      VERSION: "26.2"
+      VERSION: "26.3"
+      MOTD: "Hazelwood"
+      PAPER_CHANNEL: "experimental"
+      PAPER_BUILD: "166"
       MEMORY: "4G"
       TZ: "Europe/Moscow"
       ONLINE_MODE: "FALSE"
       ENABLE_WHITELIST: "TRUE"
+      ENABLE_STATUS: "TRUE"
+      HIDE_ONLINE_PLAYERS: "FALSE"
+      ENABLE_RCON: "TRUE"
+      RCON_PASSWORD_FILE: /run/secrets/rcon_password
+      HAZELWOOD_PORTAL_ORIGIN: http://hazelwood-card:8080
+      MINECRAFT_AUTH_URL: http://hazelwood-card:8080/internal/minecraft/auth
+      COPY_PLUGINS_SRC: /plugins
+      MODRINTH_PROJECTS: |
+        autotreechop
+        bluemap
+        craftengine
+        emotecraft
+        flectonepulse
+        lightplus
+        skinsrestorer
+        simple-voice-chat
+      REMOVE_OLD_MODS: "TRUE"
+      REMOVE_OLD_MODS_INCLUDE: "*.jar"
+      REMOVE_OLD_MODS_DEPTH: "1"
     volumes:
       - ./data:/data
+      - ./bootstrap-plugins:/plugins:ro
+    networks:
+      - hazelwood-private
+    secrets:
+      - rcon_password
+      - minecraft_auth_secret
     restart: unless-stopped
+
+networks:
+  hazelwood-private:
+    external: true
+    name: hazelwood-private
+
+secrets:
+  rcon_password:
+    file: ./secrets/rcon_password
+  minecraft_auth_secret:
+    file: ./secrets/minecraft_auth_secret
