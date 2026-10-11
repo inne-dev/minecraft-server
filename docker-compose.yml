@@ -17,6 +17,9 @@ services:
       ONLINE_MODE: "FALSE"
       ENABLE_WHITELIST: "TRUE"
       ENABLE_STATUS: "TRUE"
+      RESOURCE_PACK: "http://hazelwood.inne.space:25565/download/default"
+      RESOURCE_PACK_ENFORCE: "TRUE"
+      RESOURCE_PACK_PROMPT: "Для входа необходим ресурс-пак Hazelwood."
       HIDE_ONLINE_PLAYERS: "FALSE"
       ENABLE_RCON: "TRUE"
       RCON_PASSWORD_FILE: /run/secrets/rcon_password

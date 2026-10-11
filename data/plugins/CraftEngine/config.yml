@@ -58,9 +58,10 @@ resource-pack:
   self-host:
     ip: "auto"
     port: "auto"
+    url: "http://hazelwood.inne.space:25565/"
     protocol: "http"
     deny_non_minecraft_request: true
-    one_time_token: true
+    one_time_token: false
     strict_validation: false
     rate_limiting:
       max_bandwidth_per_second: 5_000_000

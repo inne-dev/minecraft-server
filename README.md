@@ -29,4 +29,4 @@ HazelwoodAuth polls the portal's /api/seasonal-icon endpoint every five minutes 
 
 ## Resource pack
 
-CraftEngine does not automatically send the resource pack on every join, preventing a repeated pack reload screen. An admin can send it when needed with `/ce feature send-pack <player>`. The self-hosted pack shares the Minecraft connection port; no extra Docker port is needed.
+The server requests CraftEngine’s required pack through the `RESOURCE_PACK` server property during connection setup, before the login dialog or world appears. It uses the stable CraftEngine self-host URL on port 25565 with one-time tokens disabled so the server property can point to it. `delivery.send-on-join` stays disabled to prevent a second, late request after the player enters the world. Minecraft can reuse the cached pack when it has not changed.
