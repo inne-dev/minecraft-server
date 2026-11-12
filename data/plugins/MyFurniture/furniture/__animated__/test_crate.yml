@@ -1,0 +1,149 @@
+interactionRange: 6.0
+# The list of executable items
+# that can break the block
+onlyBreakableWithEI: []
+# If the block is broken,
+# it will drop the block
+dropBlockIfItIsBroken: true
+dropType: IN_THE_INVENTORY
+# If the block is broken,
+# it will reset the internal datas
+# (Usage, and variables)
+resetInternalDatasWhenBroken: false
+config_3: true
+config_update: false
+displayFeatures:
+  itemModel: myfurniture:test_crate/full
+  scale: 1.0
+  # Whether the display will
+  # be aligned or not with
+  # the other blocks
+  aligned: false
+  # Customize the pitch
+  # rotation if needed
+  customPitch: 90
+  # Item Glowing effect
+  glow: false
+  # The amount of click
+  # required to break the EB
+  clickToBreak: 3
+  boundingBoxZones:
+    '0':
+      from:
+      - 3.1999998092651367
+      - 2.5
+      - 3.1999998092651367
+      to:
+      - 12.800000190734863
+      - 10.5
+      - 12.800000190734863
+    '1':
+      from:
+      - 2.4000000953674316
+      - 11.800000190734863
+      - 2.4000000953674316
+      to:
+      - 13.600000381469727
+      - 14.199999809265137
+      - 13.600000381469727
+  viewRange: 20.0
+titleFeatures:
+  # Active the title
+  activeTitle: false
+  # The title
+  title: []
+  titleAdjustment: 0.5
+# The activators / triggers
+activators:
+  start_animation:
+    # The name or display name
+    name: '&eStart Animation'
+    option: PLAYER_RIGHT_CLICK_ON
+    # Usage modification
+    usageModification: -1
+    # Cancel the vanilla event
+    cancelEvent: false
+    # The required items
+    requiredItems: {}
+    # The required executable items
+    requiredExecutableItems: {}
+    # The required Magics
+    # (from EcoSkills)
+    requiredMagics: {}
+    displayCommands:
+    - RUN_ANIMATION test_crate idle_bob
+    #
+    worldConditions: {}
+    # The placeholders conditions
+    placeholdersConditions: {}
+    # Part to modifiy your variables
+    variablesModification: {}
+    ownerCommands: []
+    #
+    ownerConditions: {}
+    playerCommands: []
+    # Add player conditions to determine
+    # when the 
+    playerConditions: {}
+    # The player cooldown
+    playerCooldownFeatures:
+      # The cooldown
+      cooldown: 0
+      # The placeholders conditions to pause the cooldown
+      pausePlaceholdersConditions: {}
+    # The global cooldown
+    # (For ALL players and entities)
+    globalCooldownFeatures:
+      # The cooldown
+      cooldown: 0
+    #
+    customConditions: {}
+  stop_animation:
+    # The name or display name
+    name: '&cStop Animation'
+    option: PLAYER_LEFT_CLICK_ON
+    # Usage modification
+    usageModification: -1
+    # Cancel the vanilla event
+    cancelEvent: false
+    # The required items
+    requiredItems: {}
+    # The required executable items
+    requiredExecutableItems: {}
+    # The required Magics
+    # (from EcoSkills)
+    requiredMagics: {}
+    displayCommands:
+    - STOP_ANIMATION
+    #
+    worldConditions: {}
+    # The placeholders conditions
+    placeholdersConditions: {}
+    # Part to modifiy your variables
+    variablesModification: {}
+    ownerCommands: []
+    #
+    ownerConditions: {}
+    playerCommands: []
+    # Add player conditions to determine
+    # when the 
+    playerConditions: {}
+    # The player cooldown
+    playerCooldownFeatures:
+      # The cooldown
+      cooldown: 0
+      # The placeholders conditions to pause the cooldown
+      pausePlaceholdersConditions: {}
+    # The global cooldown
+    # (For ALL players and entities)
+    globalCooldownFeatures:
+      # The cooldown
+      cooldown: 0
+    #
+    customConditions: {}
+sitFeatures:
+  # Player can sit
+  playerCanSit: false
+storageFeatures:
+  # Enable this features
+  enable: false

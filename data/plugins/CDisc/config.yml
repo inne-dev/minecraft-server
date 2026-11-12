@@ -1,0 +1,266 @@
+# CDisc — plugin behaviour. Services live in sources.yml, credentials in tokens.yml.
+# Upgrading from 1.6 or older: the old combined file is kept as config-before-split.yml.bak.
+
+### Language
+# auto (per-player client language), or one of ar_SA, de_DE, en_US, es_ES, he_IL, ru_RU, uk_UA.
+# Any other languages/<name>.yml works too; missing keys fall back to English.
+language: auto
+
+### Voice backend
+# auto | multi | simplevoicechat | plasmovoice.
+# multi broadcasts through every installed voice plugin at once, at one extra Opus encode each.
+voice-backend: simplevoicechat
+
+### Simple Voice Chat
+svc-config:
+  voicecategory:
+    id: "cdisc"
+    name: "CDisc Music"
+    description: "Custom music"
+  distance: 32.0
+
+### Beacon range boost
+# Extra hearing distance in blocks when a jukebox sits on a beacon.
+# The selectable level is capped by the beacon's pyramid tier.
+beacon-range-boost:
+  level-1: 16
+  level-2: 32
+  level-3: 64
+
+### Plasmo Voice
+pv-config:
+  sourceline:
+    name: "CDisc Music"
+
+volume: 80
+
+### Crossfade
+# Seconds over which a jukebox blends the end of one queued disc into the next.
+# The next disc is loaded ten seconds before the end, so the switch has no gap.
+# 0 turns it off, 15 is the most. Live streams, repeat-one and a lone disc never blend.
+# Each jukebox can also switch it off: Advanced in the player screen, or Options in the dialog.
+crossfade: 5
+
+### Broadcast
+# /cdisc create broadcast:Name makes a disc that plays no music: in a jukebox it goes live, and
+# the host (whoever made the disc) or an operator adds up to 6 microphones from its screen.
+# Voices reach the jukebox and its paired speakers. A block microphone hears a player as far
+# as their voice carries, quieter the further away they stand. Simple Voice Chat and Plasmo Voice.
+broadcast:
+  # false switches broadcasting off: no new broadcast discs, and the ones there are stay silent.
+  enabled: true
+  # Furthest a block microphone may be from its jukebox, in blocks.
+  block-range: 16
+  # A handheld microphone taken further than this from its jukebox goes back to the host.
+  handheld-range: 24
+
+### Sound anchor
+# Audio is emitted from an entity so it can follow a carried jukebox.
+# block_display (recommended) | marker (cheapest, may never reach the client) | armor_stand.
+sound-anchor:
+  entity: block_display
+
+### Portable jukeboxes
+# Picks a jukebox up without stopping the track; placing it back restores the block.
+portable-jukebox:
+  enabled: true
+  # Each carried jukebox is a separate track playing from the player.
+  max-per-player: 1
+  particle-interval-ticks: 50
+
+### WorldGuard
+# A jukebox inside a region answers only the region's members and owners: discs, the
+# player screen, the queue, speaker pairing and picking it up. Region bypass still applies.
+# The region flag cdisc-jukebox changes that: allow opens the jukeboxes to everyone,
+# deny closes them to members too. Ignored when WorldGuard is not installed.
+worldguard:
+  enabled: true
+  # Who words the refusal: worldguard (the region's deny-message flag, so translators of
+  # WorldGuard messages and their action bar mode apply) | cdisc (perms.region_denied).
+  # perms.region_denied starting with actionbar! or actionbar:5! goes to the action bar,
+  # for 3 or the given number of seconds, instead of chat.
+  deny-message: worldguard
+
+### Goat horns
+# /cdisc create with a goat horn in hand records a short sound onto it; blowing the horn
+# plays it from the player through voice chat instead of the horn's own call.
+goat-horn:
+  enabled: true
+  # Longest sound a horn holds, in seconds.
+  max-seconds: 15
+  # A longer sound: trim (keep only the first max-seconds) | refuse (record nothing).
+  too-long: trim
+  # Blocks away the horn is still heard.
+  distance: 64.0
+
+### Speaker groups
+# Several jukeboxes playing one track in sync. The main holds the discs and decodes;
+# speakers emit the same audio from their own position.
+speaker-group:
+  enabled: true
+  # A speaker emits from an entity in its own chunk, so a distant one only plays
+  # while somebody keeps that chunk loaded.
+  max-distance: 64
+  # Each speaker is a separate audio source for every nearby listener.
+  max-per-group: 8
+  # Operators may always change a group, so an owner leaving never locks it.
+  protect-members: true
+
+### Lyrics
+# Timed words over the jukebox and in its GUI paper, from the free databases below.
+# Everyone reads their own copy: these are the defaults for a player who has not
+# set one up in /cdisc preset, and that preset wins over everything here.
+lyrics:
+  enabled: true
+  # What a player who has not chosen sees over jukeboxes: true the words, false nothing.
+  # Each player picks their own with /cdisc lyrics or the paper in the GUI:
+  # off | lyrics | track_lyrics (words, then track and time) | time_lyrics (words, then time)
+  # | track (track and time) | time
+  default-on: false
+
+  # Asked in order until one has the song. lrclib is one request and more accurate;
+  # netease needs two but has a different catalogue.
+  providers:
+    - lrclib
+    - netease
+
+  # Ticks between hologram updates.
+  update-ticks: 4
+
+  # Blocks above the jukebox.
+  height: 1.6
+
+  # 1 to 10; 5 is nameplate size. Bigger text stands taller, so raise `height` with it.
+  size: 5
+
+  # Lines kept visible around the one being sung.
+  lines-before: 1
+  lines-after: 2
+
+  color:
+    current: "&f"
+    other: "&7"
+    # The "Track - Artist [00:00 / 03:24]" line some players read under the words.
+    track: "&6"
+
+  animation:
+    # Ticks a line takes to travel between the two colours. 0 turns it off.
+    # Keep it short: a fade still running when the next line lands reads as lag.
+    fade-ticks: 6
+    slide: true
+
+  countdown:
+    # One dot per second before the first line, so a singer sees the entry coming.
+    enabled: true
+    seconds: 3
+    # Minecraft's own font; change them for a resource pack or a different look.
+    filled: "●"
+    empty: "○"
+
+  # Pixels before a long line wraps.
+  line-width: 220
+  # Plate behind the text: 0 none, 255 solid, 60 roughly a nametag.
+  background-opacity: 60
+
+  # How solid the words are, 0 to 255. Parted for the sung line and the track line
+  # in /cdisc preset.
+  text-opacity: 255
+
+  # 0 to 15. -1 leaves the words lit by the world, so they go dark at night.
+  brightness: -1
+  shadow: false
+  see-through: false
+  view-range: 1.0
+
+  gui:
+    # The paper whose lore scrolls the words; it fits more lines than the hologram.
+    enabled: true
+    lines-before: 2
+    lines-after: 4
+
+  # A live Twitch or YouTube stream has no words, so its chat takes their place, one
+  # message a line as "[Name]: text". The text takes the `current` colour; the name keeps
+  # its Twitch chat colour, or takes the `other` colour on YouTube.
+  live-chat:
+    enabled: true
+    # Longer messages are cut short with "…". 0 keeps them whole.
+    max-length: 120
+
+  # Seconds to wait on the database for one lookup.
+  timeout-seconds: 6
+  # Most tracks that show nothing simply aren't in the database, so this is off.
+  debug: false
+
+### Resuming after a restart
+# A playing jukebox starts again from where it got to, once its chunk loads.
+# A paused one stays paused, and a live stream resumes at whatever is broadcast now.
+resume-playback: true
+
+### Crouching at a jukebox
+# Crouching at a playing jukebox shows its progress bar and lets a right-click open
+# the screen instead of ejecting the disc.
+# toggle (one press turns it on, the next turns it off) | release (shown only while the
+# key is held down) | off (crouching does nothing, so a disc goes in and out as usual).
+# Each player picks their own with /cdisc sneak toggle|release|off; this is what a player
+# who never did gets. Walking out of earshot of the jukebox takes the progress bar away.
+sneak-mode: toggle
+
+### Player screen as a dialog
+# 1.21.6+ only, ignored on Spigot. Buttons say what they do in words, but the
+# progress bar stops being live: a dialog is a snapshot, redrawn on each press.
+player-dialog: true
+
+# Ticks between redraws. A dialog cannot be edited, so each refresh rebuilds and
+# resends the whole screen — which is why this is not 1.
+player-dialog-refresh-ticks: 10
+
+### Player screen theme
+# The icons of the player screen and the screens it opens, for players who never picked one.
+# dark (grey heads) | legacy (the coloured heads and vanilla items from before 2.2.1).
+# Each player switches their own from Advanced in the player screen.
+gui-theme: dark
+
+### Settings window
+# /cdisc admin config: config.yml, sources.yml, permissions.yml and tokens.yml as a dialog,
+# one tab per file. Paper 1.21.7+ only. Saving rewrites the file and reloads the plugin.
+# Needs cdisc.admin.config, which only operators have by default; cdisc.admin does not grant it.
+# Whoever has it also gets everything cdisc.admin gives.
+config-dialog: true
+
+### Developer API
+# Tracks another plugin puts into a jukebox queue through dev.valkdz.cdisc.api or CDisc-API.
+# false: locked discs. They play like any disc but never leave the jukebox as an item: they
+# are not dropped, ejected, pulled by hoppers or taken from the queue screen. Nothing to dupe.
+# true: ordinary discs that players can take out and keep.
+api:
+  allow-discs-in-queue: false
+  # Disc item for those tracks and for discs a plugin makes. Any MUSIC_DISC_ item.
+  disc-material: MUSIC_DISC_13
+
+### Log upload
+# /cdisc admin logs: uploads the server log to mclo.gs with a public link, for a GitHub issue.
+# false turns the command off for everyone, operators and the console included.
+log-upload: true
+
+### Update checker
+# Asks Modrinth and GitHub Releases for the newest release and reports it in the console
+# and to operators.
+update-checker:
+  enabled: true
+  notify-ops: true
+  # 0 checks once at startup only, which misses a release published while running.
+  interval-hours: 6
+  # Downloads a newer release into plugins/CDisc/update, unless its Modrinth page leaves out
+  # this server's Minecraft version. GitHub releases list none and are always taken.
+  # When the server stops, the old CDisc jar is deleted and the new one takes its place.
+  auto-update: false
+
+### Anonymous statistics (bStats)
+# Server-level facts only: player count, server and Java version, feature counters.
+# No player names, UUIDs, IPs, track titles or search queries are ever sent.
+metrics: true
+
+### Debug
+# Name in the console the source each track came from: direct read, SABR or backend.
+# One line per track, both when a disc is created and when it plays.
+debug: false

@@ -1,0 +1,49 @@
+{
+  "providers" : [ {
+    "type" : "bitmap",
+    "file" : "myfurniture:gui/gui_1row.png",
+    "ascent" : 13,
+    "height" : 256,
+    "chars" : [ "" ]
+  }, {
+    "type" : "bitmap",
+    "file" : "myfurniture:gui/gui_2row.png",
+    "ascent" : 13,
+    "height" : 256,
+    "chars" : [ "" ]
+  }, {
+    "type" : "bitmap",
+    "file" : "myfurniture:gui/gui_3row.png",
+    "ascent" : 13,
+    "height" : 256,
+    "chars" : [ "" ]
+  }, {
+    "type" : "bitmap",
+    "file" : "myfurniture:gui/gui_4row.png",
+    "ascent" : 13,
+    "height" : 256,
+    "chars" : [ "" ]
+  }, {
+    "type" : "bitmap",
+    "file" : "myfurniture:gui/gui_5row.png",
+    "ascent" : 13,
+    "height" : 256,
+    "chars" : [ "" ]
+  }, {
+    "type" : "bitmap",
+    "file" : "myfurniture:gui/gui_6row.png",
+    "ascent" : 13,
+    "height" : 256,
+    "chars" : [ "" ]
+  }, {
+    "type" : "space",
+    "advances" : {
+      "" : -8,
+      "" : -16,
+      "" : -32,
+      "" : -64,
+      "" : -128,
+      "" : -256
+    }
+  } ]
+}

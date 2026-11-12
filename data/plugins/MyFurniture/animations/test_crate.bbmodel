@@ -1,0 +1,558 @@
+{
+  "meta": {
+    "format_version": "4.10",
+    "model_format": "java_block",
+    "box_uv": false
+  },
+  "name": "test_crate",
+  "resolution": {
+    "width": 16,
+    "height": 16
+  },
+  "elements": [
+    {
+      "name": "body",
+      "uuid": "elem-body-0001",
+      "from": [
+        2,
+        0,
+        2
+      ],
+      "to": [
+        14,
+        10,
+        14
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "origin": [
+        8,
+        0,
+        8
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            12,
+            10
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            12,
+            10
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            12,
+            10
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            12,
+            10
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            12,
+            12
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            12,
+            12
+          ],
+          "texture": 0
+        }
+      }
+    },
+    {
+      "name": "lid",
+      "uuid": "elem-lid-0001",
+      "from": [
+        1,
+        10,
+        1
+      ],
+      "to": [
+        15,
+        13,
+        15
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "origin": [
+        8,
+        10,
+        1
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            14,
+            3
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            0,
+            0,
+            14,
+            3
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            14,
+            3
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            0,
+            0,
+            14,
+            3
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            14,
+            14
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            0,
+            0,
+            14,
+            14
+          ],
+          "texture": 0
+        }
+      }
+    }
+  ],
+  "outliner": [
+    {
+      "name": "crate_body",
+      "uuid": "bone-body-0001",
+      "origin": [
+        8,
+        0,
+        8
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "children": [
+        "elem-body-0001"
+      ]
+    },
+    {
+      "name": "crate_lid",
+      "uuid": "bone-lid-0001",
+      "origin": [
+        8,
+        10,
+        1
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "children": [
+        "elem-lid-0001"
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "path": "",
+      "name": "crate",
+      "folder": "",
+      "namespace": "",
+      "id": "0",
+      "width": 16,
+      "height": 16,
+      "uv_width": 16,
+      "uv_height": 16,
+      "particle": false,
+      "layers_enabled": false,
+      "sync_to_project": "",
+      "render_mode": "default",
+      "render_sides": "auto",
+      "frame_time": 1,
+      "frame_order_type": "loop",
+      "frame_order": "",
+      "frame_interpolate": false,
+      "visible": true,
+      "internal": true,
+      "saved": true,
+      "uuid": "tex-crate-0001",
+      "relative_path": "",
+      "source": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAx0lEQVR4nLWTMQuCUBSFv6RdgiYhaHJwryFofWM/wx/hT/GnuAYOuYSj0wXBFmkKx2ow8KmpT6izPe495517uHcRBMFLRDh5FXOQVh4iwhLAVwVJ8kTyku1mbSSgdjGhOFgAYeQAjJIlL1vvKDsA1A6+NUyJ2DZtgePenfatIa06Avnt3vttNI+PA2uoPkTujjorA7339xmcL5nxDgD9DObsgA7jDLr1/+6B0U3oGfiqaNWmyJKXKDduHISRw+pxNTDeoD4m4Q32vVMbVPDVZgAAAABJRU5ErkJggg=="
+    }
+  ],
+  "animations": [
+    {
+      "name": "idle_bob",
+      "uuid": "anim-bob-0001",
+      "loop": "loop",
+      "length": 3.0,
+      "animators": {
+        "bone-body-0001": {
+          "name": "crate_body",
+          "type": "bone",
+          "keyframes": [
+            {
+              "time": 0,
+              "channel": "position",
+              "interpolation": "linear",
+              "data_points": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                }
+              ]
+            },
+            {
+              "time": 0.75,
+              "channel": "position",
+              "interpolation": "linear",
+              "data_points": [
+                {
+                  "x": 0,
+                  "y": 2,
+                  "z": 0
+                }
+              ]
+            },
+            {
+              "time": 1.5,
+              "channel": "position",
+              "interpolation": "linear",
+              "data_points": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                }
+              ]
+            },
+            {
+              "time": 2.25,
+              "channel": "position",
+              "interpolation": "linear",
+              "data_points": [
+                {
+                  "x": 0,
+                  "y": -1,
+                  "z": 0
+                }
+              ]
+            },
+            {
+              "time": 3.0,
+              "channel": "position",
+              "interpolation": "linear",
+              "data_points": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                }
+              ]
+            }
+          ]
+        },
+        "bone-lid-0001": {
+          "name": "crate_lid",
+          "type": "bone",
+          "keyframes": [
+            {
+              "time": 0,
+              "channel": "position",
+              "interpolation": "linear",
+              "data_points": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                }
+              ]
+            },
+            {
+              "time": 0.75,
+              "channel": "position",
+              "interpolation": "linear",
+              "data_points": [
+                {
+                  "x": 0,
+                  "y": 2,
+                  "z": 0
+                }
+              ]
+            },
+            {
+              "time": 1.5,
+              "channel": "position",
+              "interpolation": "linear",
+              "data_points": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                }
+              ]
+            },
+            {
+              "time": 2.25,
+              "channel": "position",
+              "interpolation": "linear",
+              "data_points": [
+                {
+                  "x": 0,
+                  "y": -1,
+                  "z": 0
+                }
+              ]
+            },
+            {
+              "time": 3.0,
+              "channel": "position",
+              "interpolation": "linear",
+              "data_points": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "open_lid",
+      "uuid": "anim-open-0001",
+      "loop": "once",
+      "length": 0.5,
+      "animators": {
+        "bone-lid-0001": {
+          "name": "crate_lid",
+          "type": "bone",
+          "keyframes": [
+            {
+              "time": 0,
+              "channel": "rotation",
+              "interpolation": "linear",
+              "data_points": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                }
+              ]
+            },
+            {
+              "time": 0.5,
+              "channel": "rotation",
+              "interpolation": "linear",
+              "data_points": [
+                {
+                  "x": -110,
+                  "y": 0,
+                  "z": 0
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "spin",
+      "uuid": "anim-spin-0001",
+      "loop": "loop",
+      "length": 2.0,
+      "animators": {
+        "bone-body-0001": {
+          "name": "crate_body",
+          "type": "bone",
+          "keyframes": [
+            {
+              "time": 0,
+              "channel": "rotation",
+              "interpolation": "linear",
+              "data_points": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                }
+              ]
+            },
+            {
+              "time": 0.5,
+              "channel": "rotation",
+              "interpolation": "linear",
+              "data_points": [
+                {
+                  "x": 0,
+                  "y": 90,
+                  "z": 0
+                }
+              ]
+            },
+            {
+              "time": 1.0,
+              "channel": "rotation",
+              "interpolation": "linear",
+              "data_points": [
+                {
+                  "x": 0,
+                  "y": 180,
+                  "z": 0
+                }
+              ]
+            },
+            {
+              "time": 1.5,
+              "channel": "rotation",
+              "interpolation": "linear",
+              "data_points": [
+                {
+                  "x": 0,
+                  "y": 270,
+                  "z": 0
+                }
+              ]
+            },
+            {
+              "time": 2.0,
+              "channel": "rotation",
+              "interpolation": "linear",
+              "data_points": [
+                {
+                  "x": 0,
+                  "y": 360,
+                  "z": 0
+                }
+              ]
+            }
+          ]
+        },
+        "bone-lid-0001": {
+          "name": "crate_lid",
+          "type": "bone",
+          "keyframes": [
+            {
+              "time": 0,
+              "channel": "rotation",
+              "interpolation": "linear",
+              "data_points": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                }
+              ]
+            },
+            {
+              "time": 0.5,
+              "channel": "rotation",
+              "interpolation": "linear",
+              "data_points": [
+                {
+                  "x": 0,
+                  "y": 90,
+                  "z": 0
+                }
+              ]
+            },
+            {
+              "time": 1.0,
+              "channel": "rotation",
+              "interpolation": "linear",
+              "data_points": [
+                {
+                  "x": 0,
+                  "y": 180,
+                  "z": 0
+                }
+              ]
+            },
+            {
+              "time": 1.5,
+              "channel": "rotation",
+              "interpolation": "linear",
+              "data_points": [
+                {
+                  "x": 0,
+                  "y": 270,
+                  "z": 0
+                }
+              ]
+            },
+            {
+              "time": 2.0,
+              "channel": "rotation",
+              "interpolation": "linear",
+              "data_points": [
+                {
+                  "x": 0,
+                  "y": 360,
+                  "z": 0
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

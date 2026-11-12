@@ -1,0 +1,353 @@
+# GiftPack - Present Presets Configuration
+# Admins configure gift templates here
+# Players then use: /present create <present_name> <recipient>
+
+Presents:
+  # ========== MATERIALS ==========
+  # Description of individual gift appearances/items
+  # Each present has a unique visual style
+  Materials:
+    Present1:
+      item: COAL
+      model-data: 1000
+      display: "§4Fiery Gift"
+      # Fire-themed present using CustomModelData
+
+    Present2:
+      item: PLAYER_HEAD
+      base64: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOGVlYTdmYmZlNGQ3ZWRkY2YwNzExOWY5MjIzM2QzM2E3NDA5NGFmM2NkOTNiOGRiZjIxNmQ4OWE0NTZmOWEzZCJ9fX0="
+      display: "§5Mysterious Head"
+      # Mysterious skull - intriguing design
+
+    Present3:
+      item: COAL
+      model-data: 1001
+      display: "§6Golden Gift"
+      # Luxury-themed present
+
+    Present4:
+      item: PLAYER_HEAD
+      base64: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTQ3YjM3ZTY3YTg5MTU5YmY0YWNjNGE0NGQ0MzI4ZjRlZmMwMTgxNjA1MTQyMjg4ZTVlZWQxYWI4YWVkOTEzYyJ9fX0="
+      display: "§3Frozen Head"
+      # Ice-themed skull present
+
+    Present5:
+      item: COAL
+      model-data: 1002
+      display: "§2Nature Gift"
+      # Nature / forest themed gift
+
+    Present6:
+      item: PLAYER_HEAD
+      base64: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjhkYzNjODQ0OTFjNGZmMTAzZGU2ZWEwMTg4MGUyZDgzNDMyY2Q0ODc4Yjg0ZDZiNDMyNTNjYzUxZmQ5NzhlNyJ9fX0="
+      display: "§dMagic Head"
+      # Arcane styled skull
+
+    Present7:
+      item: COAL
+      model-data: 10001
+      display: "§bOcean Gift"
+      # Water / ocean themed present
+
+    Present8:
+      item: PLAYER_HEAD
+      base64: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWI4NWUyOWYyOWVjOWE5MGU0ODJlYTViODM5MWJjYjQ1NjBiYmFlMGRjZDE1ZDdjZTFkODYwMTZiNDM1NmU5OCJ9fX0="
+      display: "§9Ocean Head"
+      # Deep sea styled skull
+
+    Present9:
+      item: NAME_TAG
+      model-data: 15
+      display: "§aLucky Gift"
+      # Luck / clover themed present
+
+    Present10:
+      item: PLAYER_HEAD
+      base64: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTllMzlkOTFjMDRjMzBjYzFmNTMwZmVlNzk4ZWVkMjc5ZGRlNjBmOTVjMmUxZDE1NWMwZmRkMzYxZDA5NjJlZCJ9fX0="
+      display: "§eLucky Head"
+      # Fortune-themed skull
+
+    Present11:
+      item: NAME_TAG
+      model-data: 17
+      display: "§cValentine Gift"
+      # Love-themed present
+
+    Present12:
+      item: PLAYER_HEAD
+      base64: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWJkOTg3OTJkZDkyZDk3MTk4OTQzNDFhYzkwMTJhNTg0YzQ0Mjg1NThmZDJjNzEyZjc4ZTVmMGQ0ZGE4NTQ3MCJ9fX0="
+      display: "§cHeart Head"
+      # Heart / romance skull
+
+    Present13:
+      item: BRICK
+      model-data: 40004
+      display: "§8Shadow Gift"
+      # Dark / shadow themed present
+
+    Present14:
+      item: PLAYER_HEAD
+      base64: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzIyZjAzNTdjODc0NWI4YWI0ZDZlZGY3OTc0MGQ5MmMyZTJlY2U4YTUzOWFlOWRkNjU5MmRkOGU5NmUyZTM5NCJ9fX0="
+      display: "§7Shadow Head"
+      # Stealth styled skull
+
+    Present15:
+      item: BRICK
+      model-data: 40005
+      display: "§dLegendary Gift"
+      # High-tier / legendary present
+
+
+  # ========== NAMES ==========
+  # Gift name templates
+  # {from} = sender's name, {for} = recipient's name
+  Name:
+    Present1:
+      name: "§6§lSimple Gift from {from}"
+
+    Present2:
+      name: "§5§lMysterious Package from {from}"
+
+    Present3:
+      name: "§4§lFiery Offering from {from}"
+
+    Present4:
+      name: "§e§lGlowing Present from {from}"
+
+    Present5:
+      name: "§2§lEmerald Treasure from {from}"
+
+    Present6:
+      name: "§d§lAmethyst Delight from {from}"
+
+    Present7:
+      name: "§8§lAncient Relic from {from}"
+
+    Present8:
+      name: "§6§lGolden Masterpiece from {from}"
+
+    Present9:
+      name: "§b§lDiamond Prize from {from}"
+
+    Present10:
+      name: "§0§lNetherite Legacy from {from}"
+
+
+
+  # ========== LORE ==========
+  # Gift description/lore text
+  # Multiple lines supported with different colors and formatting
+  Lore:
+    Present1:
+      lore:
+        - "§7A small gift from §f{from} §7to §f{for}"
+        - "§8Nothing fancy, but heartfelt"
+        - "§eRight-click to unwrap"
+
+    Present2:
+      lore:
+        - "§5A mysterious gift from §f{from}"
+        - "§7The contents are unknown"
+        - "§dCuriosity is the key — open it"
+
+    Present3:
+      lore:
+        - "§4An intense gift from §f{from}"
+        - "§7Warm. Powerful. Unstable."
+        - "§cHandle with care"
+
+    Present4:
+      lore:
+        - "§eRadiating pure energy"
+        - "§7Gifted by §f{from}"
+        - "§6It almost feels alive"
+
+    Present5:
+      lore:
+        - "§2A symbol of wealth and respect"
+        - "§7Gift from §f{from} §7to §f{for}"
+        - "§aOnly few ever receive this"
+
+    Present6:
+      lore:
+        - "§dCrystalline elegance"
+        - "§7Carefully chosen by §f{from}"
+        - "§5Calm, beauty, and balance"
+
+    Present7:
+      lore:
+        - "§8A relic from another time"
+        - "§7Passed on by §f{from}"
+        - "§7Its story is yet untold"
+
+    Present8:
+      lore:
+        - "§6Refined and exclusive"
+        - "§7A premium gift from §f{from}"
+        - "§eNot obtainable anymore"
+
+    Present9:
+      lore:
+        - "§bA gift of true value"
+        - "§7From §f{from} §7to §f{for}"
+        - "§bReserved for trusted allies"
+
+    Present10:
+      lore:
+        - "§0Absolute perfection"
+        - "§7Gift from §f{from} §7to §f{for}"
+        - "§4Only legends hold this"
+
+
+# ========== DYNAMIC PRICING ==========
+# Configure how much gifts cost
+Cost:
+  # Price type: "dynamic" or "static"
+  # - dynamic: price = base-price + (number of slots * price-per-slot)
+  # - static: price is set individually for each slot count
+  type: "dynamic"
+
+  # Dynamic pricing based on number of slots
+  # Formula: base-price + (slots * price-per-slot)
+  # Example: 1 slot = 150 + (1 * 75) = 225 currency units
+  dynamic-gift-cost:
+    base-price: 150.0
+    price-per-slot: 75.0
+
+  # Static pricing - set individual prices for each slot count
+  # Use this if you want non-linear pricing
+  static-gift-cost:
+    price-slot1: 100.0
+    price-slot2: 200.0
+    price-slot3: 300.0
+    price-slot4: 400.0
+    price-slot5: 500.0
+    price-slot6: 600.0
+    price-slot7: 700.0
+    price-slot8: 800.0
+    price-slot9: 900.0
+    price-slot10: 1000.0
+    price-slot11: 1100.0
+    price-slot12: 1200.0
+    price-slot13: 1300.0
+    price-slot14: 1400.0
+    price-slot15: 1500.0
+    price-slot16: 1600.0
+    price-slot17: 1700.0
+    price-slot18: 1800.0
+    price-slot19: 1900.0
+    price-slot20: 2000.0
+    price-slot21: 2100.0
+    price-slot22: 2200.0
+    price-slot23: 2300.0
+    price-slot24: 2400.0
+    price-slot25: 2500.0
+    price-slot26: 2600.0
+
+# ========== SLOT CONFIGURATIONS ==========
+# Configure available gift sizes
+# Each configuration defines how many inventory slots the gift can hold
+Slots:
+  s1:
+    slots: 1
+    display-name: "§7Gift (1 slot)"
+
+  s2:
+    slots: 2
+    display-name: "§7Gift (2 slots)"
+
+  s3:
+    slots: 3
+    display-name: "§6Gift (3 slots)"
+
+  s4:
+    slots: 4
+    display-name: "§6Gift (4 slots)"
+
+  s5:
+    slots: 5
+    display-name: "§eGift (5 slots)"
+
+  s6:
+    slots: 6
+    display-name: "§eGift (6 slots)"
+
+  s7:
+    slots: 7
+    display-name: "§eGift (7 slots)"
+
+  s8:
+    slots: 8
+    display-name: "§cGift (8 slots)"
+
+  s9:
+    slots: 9
+    display-name: "§cGift (9 slots)"
+
+  s10:
+    slots: 10
+    display-name: "§cGift (10 slots)"
+
+  s11:
+    slots: 11
+    display-name: "§5Gift (11 slots)"
+
+  s12:
+    slots: 12
+    display-name: "§5Gift (12 slots)"
+
+  s13:
+    slots: 13
+    display-name: "§5Gift (13 slots)"
+
+  s14:
+    slots: 14
+    display-name: "§dGift (14 slots)"
+
+  s15:
+    slots: 15
+    display-name: "§dGift (15 slots)"
+
+  s16:
+    slots: 16
+    display-name: "§dGift (16 slots)"
+
+  s17:
+    slots: 17
+    display-name: "§4Gift (17 slots)"
+
+  s18:
+    slots: 18
+    display-name: "§4Gift (18 slots)"
+
+  s19:
+    slots: 19
+    display-name: "§4Gift (19 slots)"
+
+  s20:
+    slots: 20
+    display-name: "§4Gift (20 slots)"
+
+  s21:
+    slots: 21
+    display-name: "§4Gift (21 slots)"
+
+  s22:
+    slots: 22
+    display-name: "§4Gift (22 slots)"
+
+  s23:
+    slots: 23
+    display-name: "§4Gift (23 slots)"
+
+  s24:
+    slots: 24
+    display-name: "§4Gift (24 slots)"
+
+  s25:
+    slots: 25
+    display-name: "§4Gift (25 slots)"
+
+  s26:
+    slots: 26
+    display-name: "§4Gift (26 slots)"

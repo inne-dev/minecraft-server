@@ -1,0 +1,304 @@
+# The name or display name
+name: ''
+# The lore of the item
+lore: []
+# The material
+material: BLUE_CANDLE
+# Item Glowing effect
+glow: false
+# Disable the enchant glide effect
+disableEnchantGlide: false
+# Disable item stacking ?
+disableStack: false
+# Keep the item on death ?
+keepItemOnDeath: false
+# Can be used only by the owner
+# ⚠ Require Store item info on true
+canBeUsedOnlyByTheOwner: false
+# Cancel event if not owner
+cancelEventIfNotOwner: false
+# BlackListed Activators
+# (can be used by everyone even if
+# the only owner feature is set to true)
+onlyOwnerBlackListedActivators: []
+# Store item info ?
+# Store the item info like the owner
+storeItemInfo: false
+# Item unbreakable ?
+unbreakable: false
+# The usage features
+# Increase or Decrease this usage with
+# UsageModification in your activators
+usageFeatures:
+  # The usage of the item
+  # -1 = Infinite
+  # Increase or Decrease this usage with
+  # UsageModification in your activators
+  usage: 1
+  # Is refreshable clean
+  isRefreshableClean: true
+  # The usage limit of the item
+  # Usage can't be increased above this value
+  usageLimit: -1
+# The durability feature
+# will be ignored, and the usage
+# feature will be used as durability
+isDurabilityBasedOnUsage: false
+# The drop features
+dropFeatures:
+  # Glow drop
+  glowDrop: false
+  # The color of the glow
+  glowDropColor: WHITE
+  # Display custom name above the item
+  displayNameDrop: false
+# The enchantments of the item
+enchantments: {}
+# The hiders features
+# Hiders to hide:
+# Attributes, Enchants, ...
+hiders:
+  # Hide enchantments
+  hideEnchantments: false
+  # Hide unbreakable
+  hideUnbreakable: false
+  # Hide attributes
+  hideAttributes: false
+  # Hide usage
+  hideUsage: false
+  # Hide destroys
+  hideDestroys: false
+  # Hide placed on
+  hidePlacedOn: false
+  # Hide dye
+  hideDye: false
+  # Hides armor trim details in
+  # armor. Does not hide armor
+  # trim item details
+  hideArmorTrim: false
+  # Hide additional tooltip
+  # This option can no longer hide
+  # armor trim item details in 1.21.5+
+  hideAdditionalTooltip: false
+  # Hide tool tip
+  hideToolTip: false
+# The give first join features
+giveFirstJoinFeatures:
+  # Enable the feature
+  giveFirstJoin: false
+  # The amount to give
+  giveFirstJoinAmount: 1
+  # Slot between 0 and 8 includes
+  giveFirstJoinSlot: 0
+# The restrictions features
+restrictions:
+  # The item can't be
+  # moved of the inventory
+  locked-in-inventory: false
+# Cancel the event if the player has no permission
+cancelEventIfNoPermission: false
+# The whitelisted worlds features
+whitelistedWorlds: []
+# The variables
+# Variables are used to store data like kills / deaths ...
+variables: {}
+# The activators / triggers
+activators: {}
+# Display conditions in the lore
+displayConditions:
+  # Add player conditions to determine
+  # when the 
+  playerConditions: {}
+  #
+  worldConditions: {}
+  #
+  itemConditions: {}
+  # The placeholders conditions
+  placeholdersConditions: {}
+  # Enable or disable this feature
+  enableFeature: false
+# Food features
+foodFeatures:
+  # Is the food meat?
+  isMeat: false
+  # The nutrition of the food
+  nutrition: 1
+  # The saturation of the food
+  saturation: 1
+  # Can the player always eat this food?
+  canAlwaysEat: false
+# MyFurniture Features
+myFurnitureFeatures:
+  # Enable this features
+  enable: true
+  myfurnitureID: golden_toilet
+# Consumable Features
+consumableFeatures:
+  # Enable this features
+  enable: false
+  # The animation
+  animation: EAT
+  # The sound
+  sound: ENTITY_GENERIC_EAT
+  # Has consume particles
+  hasConsumeParticles: false
+  # The consume seconds
+  consumeSeconds: 3
+  teleportRandomly: 0.0
+  # Sound to be played upon eating the
+  # consumable item
+  onConsumeSound: ENTITY_GENERIC_EAT
+  # If the consumable should clear the player's
+  # current effects
+  clearAllEffects: false
+  # List of effects to clear upon
+  # consumption
+  listPotionEffectTypeToRemove: []
+# The weapon features
+weaponFeatures:
+  # Enable this features
+  enable: false
+  # The amount of time the target's
+  # shield will not work in seconds
+  disableBlockingTime: 0
+  # The amount of durability reduced per attack
+  damagePerAttack: 5
+# The block attacks features
+blockAttacksFeatures:
+  # Enable this features
+  enable: false
+  # The block delay in seconds
+  blockDelay: 0
+  disableCooldownScale: 1.0
+  # The damage reductions
+  damageReductions: {}
+# The attack range of the weapon (1.21.11+)
+attackRangeFeatures:
+  # Enable this features
+  enable: false
+  minReach: 0.0
+  maxReach: 3.0
+  minCreativeReach: 0.0
+  maxCreativeReach: 6.0
+  hitboxMargin: 1.0
+  mobFactor: 2.0
+# The weapon pierces through entities (1.21.11+)
+piercingWeaponFeatures:
+  # Enable this features
+  enable: false
+  # Whether the piercing attack deals knockback
+  dealsKnockback: true
+  # Whether the attack dismounts hit entities
+  dismounts: false
+  # Enable the sound
+  enableSound: false
+  # The sound
+  sound: ITEM_SPEAR_ATTACK
+  # Enable the sound played when an entity is hit
+  enableHitSound: false
+  # The hit sound
+  # Requires Paperspigot or its forks to work
+  hitSound: ITEM_SPEAR_HIT
+# Charge/lunge attack based on speed (1.21.11+)
+kineticWeaponFeatures:
+  # Enable this features
+  enable: false
+  # Cooldown in ticks between two contacts
+  contactCooldownTicks: 20
+  # Delay in ticks before the kinetic effect starts
+  delayTicks: 0
+  forwardMovement: 1.0
+  damageMultiplier: 1.0
+  # Max duration (ticks) the dismount condition stays active
+  dismountMaxDurationTicks: 20
+  dismountMinSpeed: 0.0
+  dismountMinRelativeSpeed: 0.0
+  # Max duration (ticks) the knockback condition stays active
+  knockbackMaxDurationTicks: 20
+  knockbackMinSpeed: 0.0
+  knockbackMinRelativeSpeed: 0.0
+  # Max duration (ticks) the damage condition stays active
+  damageMaxDurationTicks: 20
+  damageMinSpeed: 0.0
+  damageMinRelativeSpeed: 0.0
+  # Enable the sound
+  enableSound: false
+  # The sound
+  sound: ITEM_SPEAR_LUNGE_1
+  # Enable the sound played when an entity is hit
+  enableHitSound: false
+  # The hit sound
+  # Requires Paperspigot or its forks to work
+  hitSound: ITEM_SPEAR_HIT
+# Make the item usable as a dye (26.1+)
+dyeFeatures:
+  # Enable this features
+  enable: false
+  # The dye color of the item
+  dyeColor: WHITE
+# The item absorbed by a sulfur cube (26.2+)
+sulfurCubeContentFeatures:
+  # Enable this features
+  enable: false
+# The repairable features
+repairableFeatures:
+  # Enable this features
+  enable: false
+  # The repair cost
+  repairCost: 2
+  # Items that can repair this item in an anvil
+  # (Paper 1.21.4+ only)
+  repairableItems: []
+# The rarity of the item
+itemRarity:
+  # Enable or disable the rarity feature
+  enableRarity: false
+  # The rarity of the item
+  rarity: COMMON
+# The glider
+glider: false
+# The equippable features
+equippableFeatures:
+  # Enable this features
+  enable: false
+  # The slot
+  slot: CHEST
+  # Enable the sound
+  enableSound: false
+  # The sound
+  sound: ITEM_ARMOR_EQUIP_DIAMOND
+  # The item will take damage when the player is hurt
+  damageableOnHurt: false
+  # The item can be dispensed
+  dispensable: true
+  # The item can be swapped
+  swappable: true
+  # The allowed entities
+  allowedEntities:
+  - PLAYER
+  # If the item can be sheared off the
+  # entity wearing it (e.g. with shears)
+  canBeSheared: false
+  # Enable the sound played when sheared
+  enableShearingSound: false
+  # The sound played when the item is sheared
+  shearingSound: ENTITY_SHEEP_SHEAR
+  # Equip the item on the entity by
+  # right-clicking it (e.g. like a saddle)
+  equipOnInteract: false
+itemModel: myfurniture:golden_toilet
+# The attributes
+attributes: {}
+# Keep the default attributes
+# Only for 1.19+
+keepDefaultAttributes: true
+# For new item LET IT FALSE PLS
+# Otherwise you can let it true
+# if you want to update your old items turn it FALSE
+# But be careful the item tags may change
+# it can impact shopkeeper or custom craft recipe
+# Only for 1.19+
+ignoreKeepDefaultAttributesFeature: false
+customModelData: ''
+config_5: true
+config_update: false

@@ -1,0 +1,8 @@
+# Settings CDisc switched on by itself, each only once.
+# Delete a line to let it happen again on the next start.
+
+youtube:
+  fallback-api: switched-on
+  proxy: not-in-russia
+soundcloud:
+  proxy: not-in-russia

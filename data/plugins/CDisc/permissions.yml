@@ -1,0 +1,141 @@
+# CDisc — who may do what.
+#
+# Every action below is a permission node of its own: actions.player.pause is the node
+# cdisc.player.pause, and so on. The screens are built from these, so a button a player
+# may not press is not drawn for them at all.
+#
+# A value is one rule, or a list of rules — and any one rule in the list is enough:
+#   true                                everyone
+#   false                               nobody, until a permission plugin grants the node
+#   op                                  operators
+#   notop                               everyone who is not an operator
+#   somegroup.vip                       whoever has that permission
+#   '!somegroup.muted'                  whoever has NOT got it. The quotes are needed:
+#                                       a bare ! starts a YAML tag and the file stops loading
+#   [somegroup.admin, somegroup.mod]    whoever has either of them
+#
+# true, false and op set the default of the node itself, so LuckPerms and friends can still
+# overrule them for one player. A rule that names other permissions is a second way in:
+# whoever matches it gets through, and so does anyone granted the node directly.
+#
+# cdisc.admin covers every node here but admin.logs and ignores every limit below it;
+# so does cdisc.admin.config, the right to the settings window.
+# The old node names still work: cdisc.player grants the player screen, cdisc.create the
+# creating of discs, cdisc.pair the speaker groups, and so on.
+
+actions:
+
+  ### The disc in your hand
+  disc:
+    # /cdisc create
+    create: op
+    # /cdisc disc playlist
+    playlist: true
+    # /cdisc disc clear
+    clear: true
+    # /cdisc disc convert, for a pv-addon-discs disc
+    convert: true
+    # /cdisc admin download. Operators only: it writes to the disk and spends bandwidth.
+    download: op
+    # /cdisc create broadcast:Name, a disc that puts voices through the jukebox
+    broadcast: true
+
+  ### The player screen, and /cdisc player
+  player:
+    # Opening the screen at all. Everything below is a button on it.
+    gui: true
+    # Starting a jukebox that is standing idle
+    play: true
+    pause: true
+    next: true
+    previous: true
+    # The two seek buttons, the chat timecode, and the seek slider in the dialog
+    seek: true
+    # Cycling off / track / queue
+    repeat: true
+    shuffle: true
+    # The volume of the jukebox itself, heard by everyone
+    volume: true
+    # Your own volume while you carry a jukebox
+    local-volume: true
+    # Range levels over a beacon
+    beacon: true
+    # Picking a playing jukebox up and carrying it
+    portable: true
+    # Channel and volume of a single jukebox, without a group
+    channels: true
+    # Your own now-playing messages, and /cdisc messages
+    messages: true
+    # Switching between the classic screen and the 1.21.6+ dialog
+    screen: true
+    # /cdisc player info and status, and /cdisc sneak, which picks what crouching does
+    info: true
+
+  ### The queue behind the jukebox
+  queue:
+    open: true
+    # Putting a disc into the queue
+    add: true
+    # Taking one back out. A locked disc another plugin queued is deleted instead
+    remove: true
+    # Clicking a disc in the queue to play it now
+    play: true
+    # What happens to a disc once it has played
+    policy: true
+    # Switching crossfade on or off for that jukebox
+    crossfade: true
+
+  ### Words over the jukebox
+  lyrics:
+    # Picking what you see over jukeboxes, for yourself only. /cdisc lyrics
+    toggle: true
+    # Your own look, drawn for you and nobody else. /cdisc preset
+    preset: true
+    # /cdisc preset share, which offers your look to someone else
+    share: true
+    # The words on your screen while you carry a jukebox
+    scoreboard: true
+
+  ### Speaker groups
+  pair:
+    create: true
+    # Adding, removing and renaming speakers
+    manage: true
+    # Channel, volume and particles of one speaker
+    settings: true
+    dissolve: true
+    # /cdisc pair list and info, which only read
+    list: true
+
+  ### The server itself
+  admin:
+    reload: op
+    doctor: op
+    # Uploads the server log to mclo.gs for a GitHub issue and replies with a public link;
+    # keys are hidden first. cdisc.admin does not grant it: only this rule or the node itself.
+    # log-upload: false in config.yml turns the command off altogether.
+    logs: op
+    # /cdisc admin local-files-config: the name, volume, permission and lyrics of one
+    # file in the music folder, kept beside it as <file>.jsonc
+    local-files: op
+    # /cdisc admin presets: named hologram looks made by the server and handed to players,
+    # who either keep them as a starting point or, when forced, cannot change them
+    presets: op
+
+### Limits
+# Applied to everyone without cdisc.admin. /cdisc create makes the SERVER fetch a URL
+# a player chose, so without a limit one player can spend your bandwidth as fast as they type.
+limits:
+  # Seconds between two /cdisc create by the same player. 0 turns the wait off.
+  create-cooldown-seconds: 5
+
+  # Longest track that may be written to a disc, in seconds. 0 means no limit.
+  max-track-seconds: 0
+
+  # A live stream has no length, so max-track-seconds cannot bound it.
+  allow-live: true
+
+  # Empty allowed-hosts permits anything not blocked; filled in, ONLY those hosts pass.
+  # A leading www. is ignored and subdomains count. Search queries are not URLs and are unaffected.
+  allowed-hosts: []
+  blocked-hosts: []

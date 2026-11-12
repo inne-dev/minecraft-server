@@ -6,6 +6,7 @@ secrets/
 data/.rcon-cli.*
 data/.paper.env
 data/.papermc-manifest.json
+data/.modrinth-manifest.json
 
 # Persistent world and runtime state
 data/world*/
@@ -54,6 +55,30 @@ data/plugins-disabled/
 .DS_Store
 data/plugins/LightPlus/
 data/plugins/AutoTreeChop/
+data/plugins/AxCalendar/*.db*
+data/plugins/AxCalendar/cache/
+data/plugins/AxCalendar/logs/
+data/plugins/MyFurniture/*.db*
+data/plugins/MyFurniture/cache/
+data/plugins/MyFurniture/.pack_cache
+data/plugins/MyFurniture/lib/
+data/plugins/MyFurniture/logs/
+# Plugin credentials and generated player/event state stay local to the data volume.
+data/plugins/CDisc/tokens.yml
+data/plugins/CDisc/backend-youtube-tokens.json
+data/plugins/CDisc/config.yml.old
+data/plugins/CDisc/screens.dat
+data/plugins/CDisc/holograms.json
+data/plugins/CDisc/logs/
+data/plugins/CDisc/cache/
+data/plugins/christmas-season/data/
+data/plugins/SCore/data.db
+data/plugins/SCore/textures-cache/
+data/plugins/SCore/player_settings/
+data/plugins/PlayerPresents/*.db*
+data/plugins/PlayerPresents/log.log
+data/plugins/PlayerPresents/logs/
+data/plugins/LuckPerms/
 data/plugins/SimpleLogin/
 data/plugins/TeleportPlus/
 data/plugins/faststats/

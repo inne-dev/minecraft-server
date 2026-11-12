@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "myfurniture:test_crate/crate_lid"
+  }
+}

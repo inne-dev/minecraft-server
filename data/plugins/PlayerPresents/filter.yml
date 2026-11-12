@@ -1,0 +1,74 @@
+# PlayerPresents Content Filter Configuration
+# This file contains regex patterns for filtering inappropriate content in gift names and lore
+# Add new filter categories as needed
+
+# Filter enabled/disabled globally - controlled by config.yml setting
+# Note: This file defines the patterns; enable/disable filtering in config.yml
+
+filters:
+  # English profanity and offensive terms
+  english-profanity:
+    regexes:
+      # Common English profanity - moderate words
+      - (?i)\b(damn|hell|crap|asshole|bastard|bitch|piss|shit|fuck)\b
+      # More severe profanity
+      - (?i)\b(cock|pussy|dick|dick)\b
+      # Offensive slurs
+      - (?i)\b(retard|idiot|dumbass)\b
+
+  # Racist and discriminatory language
+  racism:
+    regexes:
+      # N-word variants (censored in comments for safety)
+      - (?i)\b(n[i1]gg[a3]|n[i1]gg[e3]r)\b
+      # Other racial slurs - European targets
+      - (?i)\b(paki|chinky|jap|kebab|gypsy|gypo)\b
+      # Antisemitic terms
+      - (?i)\b(jew|kike|shylock)\b
+      # Islamophobic terms
+      - (?i)\b(raghead|towelhead|goatfucker)\b
+      # Anti-LGBTQ+ slurs
+      - (?i)\b(faggot|homo|tranny|dyke|lesbo)\b
+
+  # Homophobic language
+  homophobia:
+    regexes:
+      - (?i)\b(gay|homo|fag|fagot|queer)\b(?!\s+(?:community|rights|pride|bar|club))
+      - (?i)\b(tranny|trap|t[r1]ap)\b
+
+  # Sexist language
+  sexism:
+    regexes:
+      - (?i)\b(bitch|whore|slut|cunt|woman-hater|misogyny)\b
+      - (?i)\bfeminazi\b
+
+  # Religious intolerance
+  religious-intolerance:
+    regexes:
+      - (?i)\b(infidel|kafir|heathen)\b(?!\s+(?:comics))
+      - (?i)\b(satanist|devil-worshipper)\b
+
+
+  # Spam prevention - excessive caps or special characters
+  spam:
+    regexes:
+      # More than 5 consecutive capital letters
+      - '[A-Z]{6,}'
+      # Excessive special character sequences (excluding pipe |, which is common in decorations)
+      - '[\!\@\#\$\%\^\&\*]{4,}'
+      # Excessive repeating characters (e.g. "aaaaaa")
+      - '(.)\1{5,}'
+
+  # Advertising/spamming links or promotional content
+  advertising:
+    regexes:
+      - (?i)\b(www\.|https?:|\.com|\.org|\.net)\b
+      - (?i)\b(discord|telegram|youtube|twitch|twitter|instagram)\b(?!\s+(?:account|channel))
+      - (?i)\bvisit\s+(?:my|our|my\s+channel|our\s+server)\b
+
+# You can add more filter categories below
+# Format:
+# category-name:
+#   regexes:
+#     - regex_pattern_1
+#     - regex_pattern_2
